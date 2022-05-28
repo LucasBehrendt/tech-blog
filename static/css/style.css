@@ -3,3 +3,15 @@
 * {
     font-family: 'poppins', sans-serif;
 }
+
+/* Navbar */
+
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+.logo-icon {
+    padding-right: 5px;
+}
