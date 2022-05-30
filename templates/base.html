@@ -18,13 +18,14 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column vh-100">
 
     <header>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary bg-gradient static-top">
             <div class="container">
-                <a class="navbar-brand" href="#"><span class="logo-icon"><i class="fa-solid fa-power-off"></i></span> Tech Blog</a>
+                <a class="navbar-brand" href="#"><span class="logo-icon"><i class="fa-solid fa-power-off"></i></span>
+                    Tech Blog</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +42,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                                Account
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Login</a></li>
@@ -62,6 +63,43 @@
         {% block content %}
         {% endblock content %}
     </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+                <div class="col-md-4 d-flex align-items-center">
+                    <span class="text-muted"> © 2022 Tech Blog</span>
+                </div>
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                            aria-label="Visit Facebook (opens in a new tab)">
+                            <i class="fa-brands fa-facebook-square text-secondary"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/" target="_blank" rel="noopener"
+                            aria-label="Visit Twitter (opens in a new tab)">
+                            <i class="fa-brands fa-twitter-square text-secondary"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                            aria-label="Visit Instagram (opens in a new tab)">
+                            <i class="fa-brands fa-instagram text-secondary"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener"
+                            aria-label="Visit YouTube (opens in a new tab)">
+                            <i class="fa-brands fa-youtube text-secondary"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 
     <!-- Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

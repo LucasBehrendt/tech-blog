@@ -15,3 +15,9 @@
 .logo-icon {
     padding-right: 5px;
 }
+
+/* Footer */
+
+footer li {
+    font-size: 1.2rem;
+}
