@@ -34,6 +34,19 @@
     padding: 0 0.5rem;
 }
 
+/* About page */
+
+.about-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    box-shadow: 0px 3px 3px 0 rgb(0 0 0 / 50%);
+}
+
+.text-justify {
+    text-align: justify;
+}
+
 /* Footer */
 
 footer li {
