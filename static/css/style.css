@@ -19,7 +19,6 @@
 .navbar {
     padding-top: 1rem;
     padding-bottom: 1rem;
-
 }
 
 .logo-icon {
@@ -45,7 +44,6 @@
 
 .post-detail-img {
     max-height: 400px;
-    /* box-shadow: none; */
 }
 
 /* About page */
