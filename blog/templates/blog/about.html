@@ -1,4 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>About Page</h1>
+
+{% load static %}
+
+<div class="container my-5">
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="text-center">About Tech Blog</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Source: https://www.pexels.com/sv-se/foto/mode-man-person-hander-3345882/ -->
+            <img class="img-fluid" src="{% static 'images/about-page.jpg' %}" alt="Man overwhelmed by technology">
+        </div>
+        <div class="col-md-6">
+            <p>
+                Are you feeling overwhelmed by the sheer choices of your next phone?
+                Can't find the perfect laptop to fulfill all your needs?
+                Or maybe you have tons of interesting stuff to share?
+            </p>
+            <p>
+                This blog is for all the tech junkies out there who can't wait for the
+                next iPhone to drop, or that new graphics card that just looks insane!
+                Find your next device from one of the reviews, or post your own thought
+                and start a conversation.
+            </p>
+            <p>
+                Any and all contibutions are welcome on the blog, whether you enjoy
+                reviewing gadgets or just want to share an awesome tech-experience.
+                So join in on the conversation and ease that technological thirst!
+            </p>
+        </div>
+    </div>
+</div>
 {% endblock %}
