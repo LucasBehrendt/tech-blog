@@ -4,6 +4,16 @@
     font-family: 'poppins', sans-serif;
 }
 
+.post-img {
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0px 3px 3px 0 rgb(0 0 0 / 50%);
+}
+
+.text-justify {
+    text-align: justify;
+}
+
 /* Navbar */
 
 .navbar {
@@ -22,11 +32,8 @@
 
 /* Blog feed */
 
-.post-img {
-    width: 100%;
+.post-feed-img {
     max-height: 200px;
-    object-fit: cover;
-    box-shadow: 0px 3px 3px 0 rgb(0 0 0 / 50%);
 }
 
 .pagination-arrow {
@@ -34,17 +41,17 @@
     padding: 0 0.5rem;
 }
 
+/* Post detail page */
+
+.post-detail-img {
+    max-height: 400px;
+    /* box-shadow: none; */
+}
+
 /* About page */
 
 .about-img {
-    width: 100%;
     max-height: 500px;
-    object-fit: cover;
-    box-shadow: 0px 3px 3px 0 rgb(0 0 0 / 50%);
-}
-
-.text-justify {
-    text-align: justify;
 }
 
 /* Footer */

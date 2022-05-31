@@ -2,6 +2,7 @@
 {% block content %}
 
 <div class="container my-5">
+    <!-- Loop over each post -->
     {% for post in post_list %}
     <div class="row justify-content-center px-md-3 py-md-4 py-3 mb-5 m-md-5 mx-2 border rounded bg-white">
         <div class="row mb-3">
@@ -9,12 +10,12 @@
                 <a href="{% url 'post-detail' post.id %}">
                     {% if "placeholder" in post.image.url %}
                     <!-- Placeholder image source:  https://www.pexels.com/sv-se/foto/teknologi-modern-utrustning-flatlay-325153/-->
-                    <img class="post-img mb-md-0"
+                    <img class="post-img post-feed-img mb-md-0"
                         src="https://res.cloudinary.com/lucasbehrendt/image/upload/v1653919164/samples/ecommerce/placeholder-image.jpg"
                         alt="placeholder image">
                     {% else %}
                     <!-- User image -->
-                    <img class="img-fluid rounded mb-md-0" src="{{ post.image.url }}" alt="">
+                    <img class="post-img post-feed-img mb-md-0" src="{{ post.image.url }}" alt="">
                     {% endif %}
                 </a>
             </div>
@@ -24,6 +25,7 @@
                 <a href="{% url 'post-detail' post.id %}" type="button" class="btn btn-secondary mt-4">Read More</a>
             </div>
         </div>
+        <!-- Meta data of post -->
         <div class="row">
             <div class="col-12 p-0">
                 <hr>

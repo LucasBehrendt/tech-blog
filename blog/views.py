@@ -18,4 +18,5 @@ class PostList(ListView):
 
 
 class PostDetail(DetailView):
+    """Main post detail view"""
     model = Post
