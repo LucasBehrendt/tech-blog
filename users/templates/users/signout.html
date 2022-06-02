@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Sign In form -->
+<div class="container my-5">
+    <div class="px-md-5 px-3 py-3 m-md-5 border rounded bg-white">
+        <h4 class="lh-base">You have been logged out!</h4>
+        <hr>
+        <div>
+            <small class="text-muted">
+                <p><a href="{% url 'home' %}" class="text-link">Back to home page</a></p>
+                <p><a href="{% url 'signin' %}" class="text-link">Sign In</a></p>
+            </small>
+        </div>
+    </div>
+</div>
+{% endblock %}
