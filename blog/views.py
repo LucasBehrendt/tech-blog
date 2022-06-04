@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.db.models import Count
 from .models import Post
 
 
-def about(request):
+class About(TemplateView):
     """About page render view"""
-    return render(request, 'blog/about.html')
+    template_name = 'blog/about.html'
 
 
 class PostList(ListView):
