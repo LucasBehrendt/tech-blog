@@ -1,13 +1,20 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib import messages
-from django.views.generic import TemplateView
+from django.views.generic import UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
+from django.contrib.messages.views import SuccessMessageMixin
 from .forms import UserRegisterForm
 
 
-class Profile(TemplateView):
-    """Profile page render view"""
+class Profile(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
+    """Profile page view"""
+    model = User
+    fields = ['username', 'email']
     template_name = 'users/profile.html'
+    success_message = 'You profile was updated successfully!'
+    success_url = '/profile/{id}'
 
 
 def register(request):
