@@ -1,7 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib import messages
+from django.views.generic import TemplateView
 from .forms import UserRegisterForm
+
+
+class Profile(TemplateView):
+    """Profile page render view"""
+    template_name = 'users/profile.html'
 
 
 def register(request):
