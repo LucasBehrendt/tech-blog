@@ -1,13 +1,20 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
-<!-- Profile page -->
+<!-- Profile page with update info form -->
 <div class="container my-5">
     <div class="px-md-5 px-3 py-3 m-md-5 border rounded bg-white">
-        <h4 class="lh-base">{{ user.username }}</h4>
-        <hr>
-        <div>
-            
-        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend class="border-bottom mb-4">Profile info</legend>
+                <p>Feel free to update your information below!</p>
+                {{ form|crispy }}
+            </fieldset>
+            <div>
+                <button class="btn btn-secondary mt-3" type="submit">Update</button>
+            </div>
+        </form>
     </div>
 </div>
 {% endblock %}

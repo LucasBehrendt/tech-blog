@@ -53,7 +53,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'profile' request.user.id %}">Profile</a></li>
                                 <li><a class="dropdown-item" href="{% url 'signout' %}">Sign Out</a></li>
                             </ul>
                             {% else %}
