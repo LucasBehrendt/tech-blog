@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib import messages
-from django.views.generic import UpdateView
+from django.views.generic import CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.messages.views import SuccessMessageMixin
@@ -17,10 +17,13 @@ class Profile(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     success_url = '/profile/{id}'
 
 
-def register(request):
+class Register(SuccessMessageMixin, CreateView):
     """Main view when registering new users"""
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
+    form_class = UserRegisterForm
+    template_name = 'users/register.html'
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
@@ -28,7 +31,3 @@ def register(request):
             messages.success(request, f'Account created, \
                 you are now logged in as {username}!')
             return redirect('home')
-    else:
-        form = UserRegisterForm()
-    context = {'form': form}
-    return render(request, 'users/register.html', context)
