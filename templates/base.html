@@ -43,18 +43,29 @@
                             <a class="nav-link {% if request.path == about %} active {% endif %}" href="{% url 'about' %}">About</a>
                         </li>
                         <li class="nav-item dropdown">
+                            {% if user.is_authenticated %}
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ user.username }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Create post</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'signout' %}">Sign Out</a></li>
+                            </ul>
+                            {% else %}
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Account
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Login</a></li>
-                                <li><a class="dropdown-item" href="#">Register</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Create post</a></li>
+                                <li><a class="dropdown-item" href="{% url 'signin' %}">Sign In</a></li>
+                                <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
                             </ul>
+                            {% endif %}
                         </li>
                     </ul>
                 </div>
