@@ -7,16 +7,12 @@
         <form method="POST">
             {% csrf_token %}
             <fieldset>
-                <legend class="border-bottom mb-4">Profile info</legend>
-                <p>Feel free to update your information below!</p>
-                {{ form|crispy }}
+                <legend class="border-bottom mb-4">Are you sure you want to delete your account?</legend>
             </fieldset>
             <div>
-                <button class="btn btn-secondary my-4" type="submit">Update</button>
+                <button class="btn btn-danger mt-3 mb-4" type="submit">Delete</button>
             </div>
-            <div>
-                <a href="{% url 'delete_user' request.user.id %}" class="text-link mt-3">Delete account</a>
-            </div>
+            <a href="{% url 'profile' request.user.id %}" class="text-link">Keep my account</a>
         </form>
     </div>
 </div>
