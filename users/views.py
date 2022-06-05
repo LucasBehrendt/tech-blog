@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib import messages
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.messages.views import SuccessMessageMixin
@@ -15,6 +15,13 @@ class Profile(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     template_name = 'users/profile.html'
     success_message = 'You profile was updated successfully!'
     success_url = '/profile/{id}'
+
+
+class DeleteUser(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
+    model = User
+    success_message = 'You profile was deleted successfully!'
+    success_url = '/'
+    template_name = 'users/delete_user.html'
 
 
 class Register(SuccessMessageMixin, CreateView):

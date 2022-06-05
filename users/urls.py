@@ -9,4 +9,6 @@ urlpatterns = [
     path('signout/', auth_views.LogoutView.as_view(
         template_name='users/signout.html'), name='signout'),
     path('profile/<int:pk>', views.Profile.as_view(), name='profile'),
+    path('profile/delete/<int:pk>', views.DeleteUser.as_view(
+        ), name='delete_user'),
 ]
