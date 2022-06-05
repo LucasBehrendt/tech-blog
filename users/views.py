@@ -1,14 +1,17 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.contrib.auth import login
 from django.contrib import messages
 from django.views.generic import CreateView, UpdateView, DeleteView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.contrib.messages.views import SuccessMessageMixin
 from .forms import UserRegisterForm
 
 
-class Profile(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
+class Profile(LoginRequiredMixin,
+              UserPassesTestMixin,
+              SuccessMessageMixin,
+              UpdateView):
     """Profile page view"""
     model = User
     fields = ['username', 'email']
@@ -16,12 +19,24 @@ class Profile(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     success_message = 'You profile was updated successfully!'
     success_url = '/profile/{id}'
 
+    def test_func(self):
+        user = self.get_object()
+        return self.request.user == user
 
-class DeleteUser(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
+
+class DeleteUser(LoginRequiredMixin,
+                 UserPassesTestMixin,
+                 SuccessMessageMixin,
+                 DeleteView):
+    """User delete view"""
     model = User
     success_message = 'You profile was deleted successfully!'
     success_url = '/'
     template_name = 'users/delete_user.html'
+
+    def test_func(self):
+        user = self.get_object()
+        return self.request.user == user
 
 
 class Register(SuccessMessageMixin, CreateView):
