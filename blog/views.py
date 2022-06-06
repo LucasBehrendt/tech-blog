@@ -1,15 +1,15 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views import generic
 from django.db.models import Count
 from .models import Post
 
 
-class About(TemplateView):
+class About(generic.TemplateView):
     """About page render view"""
     template_name = 'blog/about.html'
 
 
-class PostList(ListView):
+class PostList(generic.ListView):
     """Main post feed view"""
     model = Post
     ordering = ['-created_on']
@@ -17,6 +17,6 @@ class PostList(ListView):
     queryset = Post.objects.annotate(number_of_comments=Count('comment'))
 
 
-class PostDetail(DetailView):
+class PostDetail(generic.DetailView):
     """Main post detail view"""
     model = Post
