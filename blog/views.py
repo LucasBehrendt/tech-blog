@@ -20,3 +20,9 @@ class PostList(generic.ListView):
 class PostDetail(generic.DetailView):
     """Main post detail view"""
     model = Post
+
+
+class PostCreate(generic.CreateView):
+    """View for creating post"""
+    model = Post
+    fields = ['title', 'excerpt', 'content', 'image']
