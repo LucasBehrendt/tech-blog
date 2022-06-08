@@ -31,7 +31,8 @@
             <div class="col-12 p-0">
                 <hr>
                 <div class="d-flex">
-                    <span class="ms-1"><i class="fa-regular fa-thumbs-up fs-5 me-1"></i> {{ post.number_of_likes }}</span>
+                    <span class="ms-1"><i class="fa-regular fa-thumbs-up fs-5 me-1"></i>
+                        {{ post.number_of_likes }}</span>
                     <span class="ms-auto">
                         {% if post.comment_set.all|length == 1 %}
                         {{ post.comment_set.all|length }} comment
@@ -44,8 +45,11 @@
         </div>
         <!-- Post update / delete buttons for author -->
         {% if post.author == user %}
-        <div>
-            <a class="btn btn-secondary mt-4" href="{% url 'update_post' post.id %}">Update post</a>
+        <div class="row">
+            <div class="col d-flex justify-content-center p-0">
+                <a class="btn btn-secondary mt-4 me-md-5 me-2" href="{% url 'update_post' post.id %}">Update post</a>
+                <a class="btn btn-danger mt-4 ms-md-5 ms-2" href="{% url 'delete_post' post.id %}">Delete post</a>
+            </div>
         </div>
         {% endif %}
         <!-- Comments section -->
