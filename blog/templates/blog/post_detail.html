@@ -42,6 +42,12 @@
                 </div>
             </div>
         </div>
+        <!-- Post update / delete buttons for author -->
+        {% if post.author == user %}
+        <div>
+            <a class="btn btn-secondary mt-4" href="{% url 'update_post' post.id %}">Update post</a>
+        </div>
+        {% endif %}
         <!-- Comments section -->
         <div class="row">
             <h3 class="mt-5 text-center">Comments</h3>
