@@ -1,7 +1,7 @@
 # from django.shortcuts import render
 from django.views import generic
 from django.db.models import Count
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
 
@@ -34,3 +34,23 @@ class PostCreate(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class PostUpdate(LoginRequiredMixin,
+                 UserPassesTestMixin,
+                 SuccessMessageMixin,
+                 generic.UpdateView):
+    """View for updating post"""
+    model = Post
+    fields = ['title', 'excerpt', 'content', 'image']
+    template_name = 'blog/update_post.html'
+    success_message = 'You post was updated successfully!'
+    success_url = '/post/{id}'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author

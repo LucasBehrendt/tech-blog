@@ -30,9 +30,9 @@ class DeleteUser(LoginRequiredMixin,
                  DeleteView):
     """User delete view"""
     model = User
+    template_name = 'users/delete_user.html'
     success_message = 'You profile was deleted successfully!'
     success_url = '/'
-    template_name = 'users/delete_user.html'
 
     def test_func(self):
         user = self.get_object()
