@@ -1,7 +1,8 @@
-# from django.shortcuts import render
+from django.shortcuts import redirect
 from django.views import generic
 from django.db.models import Count
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
 
@@ -32,8 +33,13 @@ class PostCreate(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     success_url = '/post/{id}'
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+        try:
+            form.instance.author = self.request.user
+            return super().form_valid(form)
+        except Exception:
+            messages.warning(
+                self.request, 'Please choose a valid image format!')
+            return redirect('create_post')
 
 
 class PostUpdate(LoginRequiredMixin,
