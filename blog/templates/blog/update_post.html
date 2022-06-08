@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Update post form -->
+<div class="container my-5">
+    <div class="px-md-5 px-3 py-3 m-md-5 border rounded bg-white">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset>
+                <legend class="border-bottom mb-4">Update post</legend>
+                {{ form|crispy }}
+                <p class="mt-2">If no image is uploaded, a default image will be provided</p>
+            </fieldset>
+            <div>
+                <button class="btn btn-secondary my-2" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
