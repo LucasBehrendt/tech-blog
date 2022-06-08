@@ -29,7 +29,7 @@ class PostCreate(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     """View for creating post"""
     model = Post
     fields = ['title', 'excerpt', 'content', 'image']
-    success_message = 'You post was submitted successfully!'
+    success_message = 'Your post was submitted successfully!'
     success_url = '/post/{id}'
 
     def form_valid(self, form):
@@ -50,12 +50,29 @@ class PostUpdate(LoginRequiredMixin,
     model = Post
     fields = ['title', 'excerpt', 'content', 'image']
     template_name = 'blog/update_post.html'
-    success_message = 'You post was updated successfully!'
+    success_message = 'Your post was updated successfully!'
     success_url = '/post/{id}'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
+
+class PostDelete(LoginRequiredMixin,
+                 UserPassesTestMixin,
+                 generic.DeleteView):
+    """View for deleting post"""
+    model = Post
+    success_message = 'Your post has been deleted!'
+    success_url = '/'
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(PostDelete, self).delete(request, *args, **kwargs)
 
     def test_func(self):
         post = self.get_object()

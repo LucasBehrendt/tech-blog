@@ -16,7 +16,7 @@ class Profile(LoginRequiredMixin,
     model = User
     fields = ['username', 'email']
     template_name = 'users/profile.html'
-    success_message = 'You profile was updated successfully!'
+    success_message = 'Your profile was updated successfully!'
     success_url = '/profile/{id}'
 
     def test_func(self):
@@ -31,7 +31,7 @@ class DeleteUser(LoginRequiredMixin,
     """User delete view"""
     model = User
     template_name = 'users/delete_user.html'
-    success_message = 'You profile was deleted successfully!'
+    success_message = 'Your profile has been deleted!'
     success_url = '/'
 
     def test_func(self):
