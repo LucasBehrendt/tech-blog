@@ -55,6 +55,16 @@
     max-height: 400px;
 }
 
+.comment-text {
+    height: 40px;
+}
+
+@media screen and (max-width: 768px)  {
+    .comment-text {
+        height: 80px;
+    }
+}
+
 /* About page */
 
 .about-img {

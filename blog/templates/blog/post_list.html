@@ -37,10 +37,10 @@
                     <div class="ms-md-auto">
                         <span><i class="fa-regular fa-thumbs-up"></i> {{ post.number_of_likes }}</span>
                         <span class="ms-3">
-                            {% if post.number_of_comments == 1 %}
-                            {{ post.number_of_comments }} comment
+                            {% if post.comment_set.all|length == 1 %}
+                            {{ post.comment_set.all|length }} comment
                             {% else %}
-                            {{ post.number_of_comments }} comments
+                            {{ post.comment_set.all|length }} comments
                             {% endif %}
                         </span>
                     </div>

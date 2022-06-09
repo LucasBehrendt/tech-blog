@@ -54,12 +54,30 @@
         {% endif %}
         <!-- Comments section -->
         <div class="row">
-            <h3 class="mt-5 text-center">Comments</h3>
+            <h3 class="mt-5 mb-4 text-center">Comments</h3>
             <div class="col-12 p-0">
-                <p>comment form coming soon!</p>
+                {% if user.is_authenticated %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        <label for="{{ form.body.id_for_label }}" class="mb-2">Comment on this post!</label>
+                        <textarea name="body" cols="40" rows="10" class="form-control bg-light comment-text" required id="id_body"></textarea>
+                    </fieldset>
+                    <div>
+                        <button class="btn btn-secondary mt-3 mb-5" type="submit">Comment</button>
+                    </div>
+                </form>
+                {% else %}
+                <p>Please <a class="text-link" href="{% url 'signin' %}">Sign In</a> or 
+                    <a class="text-link" href="{% url 'register' %}">Register</a> to comment on a post.
+                </p>
+                {% endif %}
             </div>
             <hr>
             <div class="col-12 p-0">
+                {% if not post.comment_set.all %}
+                <p class="text-center mt-3">No comments here yet...</p>
+                {% else %}
                 {% for comment in post.comment_set.all %}
                 <div class="border-start border-secondary border-3 my-5">
                     <div class="ms-3">
@@ -69,8 +87,8 @@
                         <p class="my-3">{{ comment.body }}</p>
                     </div>
                 </div>
-                <!-- <hr> -->
                 {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>
