@@ -1,10 +1,10 @@
 from django.shortcuts import redirect
 from django.views import generic
-from django.db.models import Count
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
+from .forms import CommentForm
 
 
 class About(generic.TemplateView):
@@ -17,12 +17,26 @@ class PostList(generic.ListView):
     model = Post
     ordering = ['-created_on']
     paginate_by = 5
-    queryset = Post.objects.annotate(number_of_comments=Count('comment'))
 
 
 class PostDetail(generic.DetailView):
     """Main post detail view"""
     model = Post
+    form_class = CommentForm
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            post = self.get_object()
+            form.instance.author = request.user
+            form.instance.post = post
+            form.save()
+            return redirect('post_detail', pk=post.id)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = self.form_class
+        return context
 
 
 class PostCreate(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
