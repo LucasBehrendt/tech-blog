@@ -36,6 +36,13 @@ class PostDetail(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = self.form_class
+
+        post = self.get_object()
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+        context['liked'] = liked
+
         return context
 
 
