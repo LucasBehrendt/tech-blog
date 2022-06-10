@@ -31,8 +31,25 @@
             <div class="col-12 p-0">
                 <hr>
                 <div class="d-flex">
-                    <span class="ms-1"><i class="fa-regular fa-thumbs-up fs-5 me-1"></i>
-                        {{ post.number_of_likes }}</span>
+                    <span class="ms-1">
+                        {% if user.is_authenticated %}
+                        <form action="{% url 'post_like' post.id %}" method="POST" class="d-inline">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button type="submit" name="blogpost_id" value="{{ post.id }}" class="like-btn text-secondary" aria-label="Unlike button">
+                                <i class="fa-solid fa-thumbs-up fs-5 me-1"></i>
+                            </button>
+                            {% else %}
+                            <button type="submit" name="blogpost_id" value="{{ post.id }}" class="like-btn" aria-label="Like button">
+                                <i class="fa-regular fa-thumbs-up fs-5 me-1"></i>
+                            </button>
+                            {% endif %}
+                        </form>
+                        {% else %}
+                        <i class="fa-regular fa-thumbs-up fs-5 me-1 text-secondary"></i>
+                        {% endif %}
+                        {{ post.number_of_likes }}
+                    </span>
                     <span class="ms-auto">
                         {% if post.comment_set.all|length == 1 %}
                         {{ post.comment_set.all|length }} comment
@@ -61,14 +78,15 @@
                     {% csrf_token %}
                     <fieldset>
                         <label for="{{ form.body.id_for_label }}" class="mb-2">Comment on this post!</label>
-                        <textarea name="body" cols="40" rows="10" class="form-control bg-light comment-text" required id="id_body"></textarea>
+                        <textarea name="body" cols="40" rows="10" class="form-control bg-light comment-text" required
+                            id="id_body"></textarea>
                     </fieldset>
                     <div>
                         <button class="btn btn-secondary mt-3 mb-5" type="submit">Comment</button>
                     </div>
                 </form>
                 {% else %}
-                <p>Please <a class="text-link" href="{% url 'signin' %}">Sign In</a> or 
+                <p>Please <a class="text-link" href="{% url 'signin' %}">Sign In</a> or
                     <a class="text-link" href="{% url 'register' %}">Register</a> to comment on a post.
                 </p>
                 {% endif %}

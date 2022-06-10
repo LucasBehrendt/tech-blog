@@ -59,6 +59,12 @@
     height: 40px;
 }
 
+.like-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
 @media screen and (max-width: 768px)  {
     .comment-text {
         height: 80px;
