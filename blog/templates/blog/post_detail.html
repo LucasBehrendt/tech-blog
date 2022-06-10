@@ -40,7 +40,7 @@
                                 <i class="fa-solid fa-thumbs-up fs-5 me-1"></i>
                             </button>
                             {% else %}
-                            <button type="submit" name="blogpost_id" value="{{ post.id }}" class="like-btn" aria-label="Like button">
+                            <button type="submit" name="blogpost_id" value="{{ post.id }}" class="like-btn text-secondary" aria-label="Like button">
                                 <i class="fa-regular fa-thumbs-up fs-5 me-1"></i>
                             </button>
                             {% endif %}
@@ -63,9 +63,9 @@
         <!-- Post update / delete buttons for author -->
         {% if post.author == user %}
         <div class="row">
-            <div class="col d-flex justify-content-center p-0">
-                <a class="btn btn-secondary mt-4 me-md-5 me-2" href="{% url 'update_post' post.id %}">Update post</a>
-                <a class="btn btn-danger mt-4 ms-md-5 ms-2" href="{% url 'delete_post' post.id %}">Delete post</a>
+            <div class="col d-flex justify-content-between p-0">
+                <a class="btn btn-secondary mt-4 me-1" href="{% url 'update_post' post.id %}">Update post</a>
+                <a class="btn btn-danger mt-4 ms-1" href="{% url 'delete_post' post.id %}">Delete post</a>
             </div>
         </div>
         {% endif %}
