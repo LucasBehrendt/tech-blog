@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
@@ -37,6 +37,20 @@ class PostDetail(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context['form'] = self.form_class
         return context
+
+
+class PostLike(generic.View):
+    """View for handling likes on post"""
+    def post(self, request, pk):
+        post = get_object_or_404(Post, pk=pk)
+        user = self.request.user
+
+        if user in post.likes.all():
+            post.likes.remove(user)
+        else:
+            post.likes.add(user)
+
+        return redirect('post_detail', pk=post.id)
 
 
 class PostCreate(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
