@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm
 
 
@@ -31,6 +31,8 @@ class PostDetail(generic.DetailView):
             form.instance.author = request.user
             form.instance.post = post
             form.save()
+            messages.success(request, 'Comment created!')
+
             return redirect('post_detail', pk=post.id)
 
     def get_context_data(self, **kwargs):
@@ -74,6 +76,7 @@ class PostCreate(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
         except Exception:
             messages.warning(
                 self.request, 'Please choose a valid image format!')
+
             return redirect('create_post')
 
 
@@ -112,3 +115,15 @@ class PostDelete(LoginRequiredMixin,
     def test_func(self):
         post = self.get_object()
         return self.request.user == post.author
+
+
+class CommentDelete(LoginRequiredMixin, generic.View):
+    """View for deleting comments"""
+
+    def post(self, request, pk):
+        comment = get_object_or_404(Comment, pk=pk)
+        post = comment.post.id
+        comment.delete()
+        messages.success(request, 'Your comment has been deleted!')
+
+        return redirect('post_detail', pk=post)
