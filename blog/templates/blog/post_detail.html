@@ -36,11 +36,13 @@
                         <form action="{% url 'post_like' post.id %}" method="POST" class="d-inline">
                             {% csrf_token %}
                             {% if liked %}
-                            <button type="submit" name="blogpost_id" value="{{ post.id }}" class="like-btn text-secondary" aria-label="Unlike button">
+                            <button type="submit" name="blogpost_id" value="{{ post.id }}"
+                                class="like-btn text-secondary" aria-label="Unlike button">
                                 <i class="fa-solid fa-thumbs-up fs-5 me-1"></i>
                             </button>
                             {% else %}
-                            <button type="submit" name="blogpost_id" value="{{ post.id }}" class="like-btn text-secondary" aria-label="Like button">
+                            <button type="submit" name="blogpost_id" value="{{ post.id }}"
+                                class="like-btn text-secondary" aria-label="Like button">
                                 <i class="fa-regular fa-thumbs-up fs-5 me-1"></i>
                             </button>
                             {% endif %}
@@ -102,7 +104,42 @@
                         <span>
                             {{ comment.author.username }} - {{ comment.created_on|timesince }} ago
                         </span>
-                        <p class="my-3">{{ comment.body }}</p>
+                        <p class="mt-3 mb-2">{{ comment.body }}</p>
+                        <!-- Comment delete button for author -->
+                        {% if comment.author == user %}
+                        <button type="button" class="btn btn-sm btn-danger mb-1" data-bs-toggle="modal"
+                            data-bs-target="#modal-{{ comment.id }}">
+                            Delete
+                        </button>
+
+                        <!-- Modal for deleting comment -->
+                        <div class="modal fade" id="modal-{{ comment.id }}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete comment</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete the following comment?</p>
+                                        <p>{{ comment.body }}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form action="{% url 'delete_comment' comment.id %}" method="POST"
+                                            class="d-inline">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}

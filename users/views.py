@@ -39,7 +39,7 @@ class DeleteUser(LoginRequiredMixin,
         return self.request.user == user
 
 
-class Register(SuccessMessageMixin, CreateView):
+class Register(CreateView):
     """Main view when registering new users"""
     form_class = UserRegisterForm
     template_name = 'users/register.html'
