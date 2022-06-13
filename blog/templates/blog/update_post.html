@@ -12,8 +12,9 @@
                 <p class="mt-2">If no image is uploaded, a default image will be provided</p>
             </fieldset>
             <div>
-                <button class="btn btn-secondary my-2" type="submit">Submit</button>
+                <button class="btn btn-secondary mt-2 mb-4" type="submit">Submit</button>
             </div>
+            <a href="{% url 'post_detail' post.id %}" class="text-link">Go back</a>
         </form>
     </div>
 </div>
