@@ -26,13 +26,17 @@ class PostDetail(generic.DetailView):
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
+        post = self.get_object()
         if form.is_valid():
-            post = self.get_object()
             form.instance.author = request.user
             form.instance.post = post
             form.save()
             messages.success(request, 'Comment created!')
 
+            return redirect('post_detail', pk=post.id)
+        else:
+            messages.warning(
+                request, 'Please write something in the comment field!')
             return redirect('post_detail', pk=post.id)
 
     def get_context_data(self, **kwargs):

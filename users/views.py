@@ -53,3 +53,6 @@ class Register(CreateView):
             messages.success(request, f'Account created, \
                 you are now logged in as {username}!')
             return redirect('home')
+        else:
+            messages.warning(request, 'Please input a valid username!')
+            return redirect('register')
