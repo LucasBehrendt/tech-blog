@@ -4,6 +4,7 @@ from blog import views
 
 
 class TestUrls(TestCase):
+    """Tests for all blog app urls"""
 
     def test_home_url(self):
         url = reverse('home')
