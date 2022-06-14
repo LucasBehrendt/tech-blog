@@ -75,3 +75,89 @@ class TestViews(TestCase):
 
         self.assertTrue(logged_in)
         self.assertEqual(response.status_code, 200)
+
+    def test_post_create_POST(self):
+        logged_in = self.client.login(
+            username='testuser', password='testpassword'
+        )
+        url = reverse('create_post')
+        response = self.client.post(url, {
+            'title': 'test2',
+            'author': self.user,
+            'excerpt': 'testExcerpt2',
+            'content': 'testContent2',
+        })
+
+        post2 = Post.objects.filter(title='test2')
+
+        self.assertTrue(logged_in)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(post2.first().excerpt, 'testExcerpt2')
+
+    def test_post_update_GET(self):
+        logged_in = self.client.login(
+            username='testuser', password='testpassword'
+        )
+        url = reverse('update_post', args=[1])
+        response = self.client.get(url)
+
+        self.assertTrue(logged_in)
+        self.assertEqual(response.status_code, 200)
+
+    def test_post_update_POST(self):
+        logged_in = self.client.login(
+            username='testuser', password='testpassword'
+        )
+        url = reverse('update_post', args=[1])
+        response = self.client.post(url, {
+            'title': 'test1 updated',
+            'author': self.user,
+            'excerpt': 'testExcerpt updated',
+            'content': 'testContent updated',
+        })
+
+        post_updated = Post.objects.get(id=1)
+
+        self.assertTrue(logged_in)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(post_updated.title, 'test1 updated')
+        self.assertEqual(post_updated.content, 'testContent updated')
+
+    def test_post_delete_GET(self):
+        logged_in = self.client.login(
+            username='testuser', password='testpassword'
+        )
+        url = reverse('delete_post', args=[1])
+        response = self.client.get(url)
+
+        self.assertTrue(logged_in)
+        self.assertEqual(response.status_code, 200)
+
+    def test_post_delete_POST(self):
+        logged_in = self.client.login(
+            username='testuser', password='testpassword'
+        )
+        url = reverse('delete_post', args=[1])
+        response = self.client.post(url)
+
+        post_deleted = Post.objects.all()
+
+        self.assertTrue(logged_in)
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(post_deleted.first())
+        self.assertQuerysetEqual(post_deleted, [])
+
+    def test_comment_delete_POST(self):
+        logged_in = self.client.login(
+            username='testuser', password='testpassword'
+        )
+
+        url = reverse('delete_comment', args=[1])
+        response = self.client.post(url)
+
+        comment_deleted = Comment.objects.all()
+
+        self.assertTrue(logged_in)
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(comment_deleted.first())
+        self.assertQuerysetEqual(comment_deleted, [])
