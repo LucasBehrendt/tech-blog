@@ -8,6 +8,25 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .forms import UserRegisterForm
 
 
+class Register(CreateView):
+    """Main view when registering new users"""
+    form_class = UserRegisterForm
+    template_name = 'users/register.html'
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account created, \
+                you are now logged in as {username}!')
+            return redirect('home')
+        else:
+            messages.warning(request, 'Please input a valid username!')
+            return redirect('register')
+
+
 class Profile(LoginRequiredMixin,
               UserPassesTestMixin,
               SuccessMessageMixin,
@@ -37,22 +56,3 @@ class DeleteUser(LoginRequiredMixin,
     def test_func(self):
         user = self.get_object()
         return self.request.user == user
-
-
-class Register(CreateView):
-    """Main view when registering new users"""
-    form_class = UserRegisterForm
-    template_name = 'users/register.html'
-
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created, \
-                you are now logged in as {username}!')
-            return redirect('home')
-        else:
-            messages.warning(request, 'Please input a valid username!')
-            return redirect('register')
