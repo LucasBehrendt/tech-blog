@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- 404 error page -->
+<div class="container my-5">
+    <div class="px-md-5 px-3 pb-md-5 py-4 m-md-5 border rounded bg-white">
+        <div class="row mb-4">
+            <div class="col-12 text-center px-1">
+                <h3 class="">Oops, this page doesn't exist!</h3>
+                <hr>
+                <a href="{% url 'home' %}" type="button" class="btn btn-secondary mt-5">Take me back to safety!</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
