@@ -13,6 +13,9 @@ class UserRegisterForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
     def clean(self):
+        # check if case insensitive username exists
+        # source: https://simpleisbetterthancomplex.com/tutorial/
+        # 2017/02/06/how-to-implement-case-insensitive-username.html
         cleaned_data = super(UserRegisterForm, self).clean()
         username = cleaned_data.get('username')
         if username and User.objects.filter(

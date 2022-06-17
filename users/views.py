@@ -1,10 +1,10 @@
-from django.shortcuts import redirect
-from django.contrib.auth import login
 from django.contrib import messages
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic import CreateView, UpdateView, DeleteView
+from django.http import HttpResponseRedirect
 from .forms import UserRegisterForm
 
 
@@ -12,19 +12,15 @@ class Register(CreateView):
     """Main view when registering new users"""
     form_class = UserRegisterForm
     template_name = 'users/register.html'
+    success_url = '/'
 
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created, \
-                you are now logged in as {username}!')
-            return redirect('home')
-        else:
-            messages.warning(request, 'Please input a valid username!')
-            return redirect('register')
+    def form_valid(self, form):
+        user = form.save()
+        username = form.cleaned_data.get('username')
+        login(self.request, user)
+        messages.success(self.request, f'Account created, \
+            you are now logged in as {username}!')
+        return HttpResponseRedirect(self.success_url)
 
 
 class Profile(LoginRequiredMixin,
