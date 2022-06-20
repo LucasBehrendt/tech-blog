@@ -56,12 +56,28 @@ The following user stories were used in an agile approach when creating the appl
 Due to time constrains not all user stories were finished. These will be addressed in the future. See [Testing](#testing) section for more details. **
 
 ### Structure
+
+The site is structured with simplicity and accessibility in mind, to help users intuitively navigate the site. The landing page gives the user relevant information about each post without cluttering the feed. A simple, fully responsive navigation helps keep the flow of the site balanced when navigating and interacting with the application. All pages are carefully structured to be consistent and pleasing to browse. All user interactions, such as registering an account or creating a post have logical responses and provide relevant feedback.
+
+To help facilitate a logical flow of the application during the development process, a simple flowchart was created using [Lucidchart](https://www.lucidchart.com/pages/).
+
+<details>
+
+<summary>Flowchart</summary>
+
+![Flowchart](static/images/readme-images/flowchart.png)
+
+</details>
+
+### Wireframes
 ### Design
 - #### Colours
 - #### Typography
 - #### Imagery
 
-## Wireframes
+
+
+## Agile Methodology / Data Model
 
 ## Features
 ### Features Left to Implement
