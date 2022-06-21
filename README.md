@@ -53,9 +53,6 @@ The following user stories were used in an agile approach when creating the appl
 
   - As a Site User I can delete my own comments so that I can control my own content.
 
-Due to time constrains not all user stories were finished. These will be addressed in the future. See [Testing](#testing) section for more details. **
-
-
 ### Structure
 
 The site is structured with simplicity and accessibility in mind, to help users intuitively navigate the site. The landing page gives the user relevant information about each post without cluttering the feed. A simple, fully responsive navigation helps keep the flow of the site balanced when navigating and interacting with the application. All pages are carefully structured to be consistent and pleasing to browse. All user interactions, such as registering an account or creating a post have logical responses and provide relevant feedback.
@@ -69,7 +66,6 @@ To help facilitate a logical flow of the application during the development proc
 ![Flowchart](static/images/readme-images/flowchart.png)
 
 </details>
-
 
 ### Data Model
 
@@ -105,10 +101,9 @@ The database used for the application requires a Post and Comment model. The use
 
 - The post field has a FK to the Post model, to make sure the comment is assigned to the correct blog post.
 
-
 ### Wireframes
 
-Wireframes were created using Balsamiq.
+Wireframes were created using Balsamiq to help the planning process and get an idea of how the site was to be built. The finished site came very close to these mockups, with some minor adjustments.
 
 <details>
 
@@ -188,7 +183,6 @@ Delete post page<br>
 
 </details>
 
-
 ### Design
 - #### Colours
 
@@ -205,10 +199,21 @@ Delete post page<br>
 
   The images on the site are mainly user uploaded post images, with a few exceptions. An image depicting a person overwhelmed with technology is used on the About page, and a generic image of tech gadgets is used as placeholder if a user fails to provide one when creating a post. The main focus should always fall on the content written by the members of the site, therefore no other images were necessary.
 
-
 ## Agile Methodology
 
+To better plan and understand the development process, an agile approach was taken when implementing features. GitHub Projects provides a great way of keeping track of progress made and user stories to develop. By creating a project board on a basic kanban template, the development process can be overviewed and tackled in a proficient and time-effective way. Each user story was first created and added to the project board, then moved to In Progress as the feature was being developed, and finally to Done. With this approach it's easy to make sure the most important features gets implemented first.
 
+This approach is especially powerful when working in teams, but still made the development process more enjoyable and easier to keep track of when developing alone.
+
+<details>
+
+<summary>GitHub Project Board</summary>
+
+![GitHub Project Board](static/images/readme-images/project-board.png)
+
+</details>
+
+As evident by the above image, not all user stories were finished in the time frame of this project. These will be implemented and possibly added to in the future.
 
 ## Features
 ### Features Left to Implement
