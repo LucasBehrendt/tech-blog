@@ -307,6 +307,122 @@ The following section will provide an overview of the features included in Tech 
 
   </details>
 
+- ### About Page
+
+  - The about page serves as a short introduction to the blog and what users can expect to find. The text emphasize that everyone is welcome to become members and start sharing their thought with other members, regardless of whether a user is looking for tips, or want to write reviews etc.
+
+  - A fitting image of a guy overwhelmed with tech gadgets helps relate to users.
+
+  <details>
+
+  <summary>About Page - Desktop</summary>
+
+  ![About Page - Desktop](static/images/readme-images/about-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>About Page - Mobile</summary>
+
+  ![About Page - Mobile](static/images/readme-images/about-mobile.png)
+
+  </details>
+
+- ### Register Page
+
+  - To be able to interact with the site and post content users must register for an account. This page simply lets users choose a username, email and password and saves it to the database.
+
+  - The built in authentication system in Django worked very well for this and if for instance a username is already in use, a message is shown to the user to inform of this.
+
+  - If a user clicks on Register by misstake and already have an account, a link at the bottom takes the user to the sign in page instead.
+
+  <details>
+
+  <summary>Register Page - Desktop</summary>
+
+  ![Register Page - Desktop](static/images/readme-images/register-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Register Page - Mobile</summary>
+
+  ![Register Page - Mobile](static/images/readme-images/register-mobile.png)
+
+  </details>
+
+- ### Sign In Page
+
+  - When a user already has an account, they go to the sign in page. Just like on the register page there is a link at the bottom if the user meant to go there.
+
+  <details>
+
+  <summary>Sign In Page - Desktop</summary>
+
+  ![Sign In Page - Desktop](static/images/readme-images/signin-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Sign In Page - Mobile</summary>
+
+  ![Sign In Page - Mobile](static/images/readme-images/signin-mobile.png)
+
+  </details>
+
+- ### Profile Page
+
+  - The profile page is accessible for signed in users, and features the users info with a form to update it if desirable.
+
+  - Users can also delete their account from the link at the bottom if they wish, to make sure no info is stored on them. If clicked, the user is taken to a confirmation screen to make sure an account is not deleted by accident.
+
+  <details>
+
+  <summary>Profile Page - Desktop</summary>
+
+  ![Profile Page - Desktop](static/images/readme-images/profile-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Profile Page - Mobile</summary>
+
+  ![Profile Page - Mobile](static/images/readme-images/profile-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Profile Page - Delete Account</summary>
+
+  ![Profile Page - Delete Account](static/images/readme-images/delete-account.png)
+
+  </details>
+
+- ### Sign Out Page
+
+  - When a user clicks the sign out link a page with a message stating they have been signed out is shown. Two links to the home page and back to the sign in page can also be found.
+
+  <details>
+
+  <summary>Sign Out Page - Desktop</summary>
+
+  ![Sign Out Page - Desktop](static/images/readme-images/signout-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Sign Out Page - Mobile</summary>
+
+  ![Sign Out Page - Mobile](static/images/readme-images/signout-mobile.png)
+
+  </details>
+
 ### Features Left to Implement
 
 ## Testing
