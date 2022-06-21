@@ -116,47 +116,56 @@ Delete post page
 
 <summary>Mobile wireframes</summary>
 
-Home page
+Home page<br>
 ![Mobile wireframe home](static/images/readme-images/wireframes/Mobile-home.png)
 
-About page
+About page<br>
 ![Mobile wireframe about](static/images/readme-images/wireframes/Mobile-about.png)
 
-Register page
+Register page<br>
 ![Mobile wireframe register](static/images/readme-images/wireframes/Mobile-register.png)
 
-Sign in page
+Sign in page<br>
 ![Mobile wireframe sign in](static/images/readme-images/wireframes/Mobile-signin.png)
 
-Profile page
+Profile page<br>
 ![Mobile wireframe profile](static/images/readme-images/wireframes/Mobile-profile.png)
 
-Sign out page
+Sign out page<br>
 ![Mobile wireframe sign out](static/images/readme-images/wireframes/Mobile-signout.png)
 
-Delete account page
+Delete account page<br>
 ![Mobile wireframe delete account](static/images/readme-images/wireframes/Mobile-delete_account.png)
 
-Create post page
+Create post page<br>
 ![Mobile wireframe create post](static/images/readme-images/wireframes/Mobile-create_post.png)
 
-Post detail page
+Post detail page<br>
 ![Mobile wireframe post detail](static/images/readme-images/wireframes/Mobile-post.png)
 
-Update post page
+Update post page<br>
 ![Mobile wireframe update post](static/images/readme-images/wireframes/Mobile-update_post.png)
 
-Delete post page
+Delete post page<br>
 ![Mobile wireframe delete post](static/images/readme-images/wireframes/Mobile-delete_post.png)
 
 </details>
 
 ### Design
 - #### Colours
+
+  The colours used on the site are discreet and chosen to put emphasis on the content of blog posts, and not be distracting to the user. The background color is a near white Bootstrap colour (bg-light) that gives contrast to the content on the page, which is wrapped in card-like modules with a clear white background. 
+  The navigation bar at the top of the page has a gray Bootstrap colour (bg-secondary) that is also consistently used throughout the application on links and buttons.
+
+  User interactions, such as posting and commenting, or registering and deleting an account all have relevant user feedback. The buttons are coloured in an appropriate way, such as delete buttons being red. Messages giving users feedback are also coloured appropriately to clarify user actions taken.
+
 - #### Typography
+
+  The font used for the site is Poppins, an aesthetically and geometrically pleasing font that suits the content and clean feel of the site. If the font isn't imported correctly, Sans-serif will serve as fallback.
+
 - #### Imagery
 
-
+  The images on the site are mainly user uploaded post images, with a few exceptions. An image depicting a person overwhelmed with technology is used on the About page, and a generic image of tech gadgets is used as placeholder if a user fails to provide one when creating a post. The main focus should always fall on the content written by the members of the site, therefore no other images were necessary.
 
 ## Agile Methodology / Data Model
 
