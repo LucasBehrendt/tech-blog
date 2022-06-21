@@ -70,6 +70,87 @@ To help facilitate a logical flow of the application during the development proc
 </details>
 
 ### Wireframes
+
+Wireframes were created using Balsamiq.
+
+<details>
+
+<summary>Desktop wireframes</summary>
+
+Home page
+![Desktop wireframe home](static/images/readme-images/wireframes/Desktop-home.png)
+
+About page
+![Desktop wireframe about](static/images/readme-images/wireframes/Desktop-about.png)
+
+Register page
+![Desktop wireframe register](static/images/readme-images/wireframes/Desktop-register.png)
+
+Sign in page
+![Desktop wireframe sign in](static/images/readme-images/wireframes/Desktop-signin.png)
+
+Profile page
+![Desktop wireframe profile](static/images/readme-images/wireframes/Desktop-profile.png)
+
+Sign out page
+![Desktop wireframe sign out](static/images/readme-images/wireframes/Desktop-signout.png)
+
+Delete account page
+![Desktop wireframe delete account](static/images/readme-images/wireframes/Desktop-delete_account.png)
+
+Create post page
+![Desktop wireframe create post](static/images/readme-images/wireframes/Desktop-create_post.png)
+
+Post detail page
+![Desktop wireframe post detail](static/images/readme-images/wireframes/Desktop-post.png)
+
+Update post page
+![Desktop wireframe update post](static/images/readme-images/wireframes/Desktop-update_post.png)
+
+Delete post page
+![Desktop wireframe delete post](static/images/readme-images/wireframes/Desktop-delete_post.png)
+
+</details>
+
+<details>
+
+<summary>Mobile wireframes</summary>
+
+Home page
+![Mobile wireframe home](static/images/readme-images/wireframes/Mobile-home.png)
+
+About page
+![Mobile wireframe about](static/images/readme-images/wireframes/Mobile-about.png)
+
+Register page
+![Mobile wireframe register](static/images/readme-images/wireframes/Mobile-register.png)
+
+Sign in page
+![Mobile wireframe sign in](static/images/readme-images/wireframes/Mobile-signin.png)
+
+Profile page
+![Mobile wireframe profile](static/images/readme-images/wireframes/Mobile-profile.png)
+
+Sign out page
+![Mobile wireframe sign out](static/images/readme-images/wireframes/Mobile-signout.png)
+
+Delete account page
+![Mobile wireframe delete account](static/images/readme-images/wireframes/Mobile-delete_account.png)
+
+Create post page
+![Mobile wireframe create post](static/images/readme-images/wireframes/Mobile-create_post.png)
+
+Post detail page
+![Mobile wireframe post detail](static/images/readme-images/wireframes/Mobile-post.png)
+
+Update post page
+![Mobile wireframe update post](static/images/readme-images/wireframes/Mobile-update_post.png)
+
+Delete post page
+![Mobile wireframe delete post](static/images/readme-images/wireframes/Mobile-delete_post.png)
+
+</details>
+
 ### Design
 - #### Colours
 - #### Typography
