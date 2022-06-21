@@ -55,6 +55,7 @@ The following user stories were used in an agile approach when creating the appl
 
 Due to time constrains not all user stories were finished. These will be addressed in the future. See [Testing](#testing) section for more details. **
 
+
 ### Structure
 
 The site is structured with simplicity and accessibility in mind, to help users intuitively navigate the site. The landing page gives the user relevant information about each post without cluttering the feed. A simple, fully responsive navigation helps keep the flow of the site balanced when navigating and interacting with the application. All pages are carefully structured to be consistent and pleasing to browse. All user interactions, such as registering an account or creating a post have logical responses and provide relevant feedback.
@@ -68,6 +69,42 @@ To help facilitate a logical flow of the application during the development proc
 ![Flowchart](static/images/readme-images/flowchart.png)
 
 </details>
+
+
+### Data Model
+
+The database used for the application requires a Post and Comment model. The user authentication system is included in the Django framework and a User model was therefore already provided. To get an idea of the relationships and fields required in the models, an ERD (Entity Relationship Diagram) was created using [Lucidchart](https://www.lucidchart.com/pages/).
+
+<details>
+
+<summary>Entity Relationship Diagram</summary>
+
+![Entity relationship diagram](static/images/readme-images/erd.png)
+
+</details>
+
+#### User Model
+
+- Provided by the Django framework, each new user is given a unique ID which will serve as FK (Foreign Key) in Post & Comment model.
+
+- Username, Email and Password is chosen by the user and can be updated from the Profile page.
+
+#### Post Model
+
+- ID and time of creation is given automatically. 
+
+- Users can choose a title, excerpt, content and image, while author is automatically set to the signed in users ID.
+
+- Likes will be 0 when created, and has a Many to Many relationship with the User model, meaning that many users can like the same post, and the same user can like many posts.
+
+#### Comment Model
+
+- ID and time of creation is given automatically.
+
+- Users can choose a body, while author is automatically set to the signed in users ID.
+
+- The post field has a FK to the Post model, to make sure the comment is assigned to the correct blog post.
+
 
 ### Wireframes
 
@@ -151,6 +188,7 @@ Delete post page<br>
 
 </details>
 
+
 ### Design
 - #### Colours
 
@@ -167,7 +205,10 @@ Delete post page<br>
 
   The images on the site are mainly user uploaded post images, with a few exceptions. An image depicting a person overwhelmed with technology is used on the About page, and a generic image of tech gadgets is used as placeholder if a user fails to provide one when creating a post. The main focus should always fall on the content written by the members of the site, therefore no other images were necessary.
 
-## Agile Methodology / Data Model
+
+## Agile Methodology
+
+
 
 ## Features
 ### Features Left to Implement
