@@ -79,27 +79,27 @@ The database used for the application requires a Post and Comment model. The use
 
 </details>
 
-#### User Model
+- #### User Model
 
-- Provided by the Django framework, each new user is given a unique ID which will serve as FK (Foreign Key) in Post & Comment model.
+  - Provided by the Django framework, each new user is given a unique ID which will serve as FK (Foreign Key) in Post & Comment model.
 
-- Username, Email and Password is chosen by the user and can be updated from the Profile page.
+  - Username, Email and Password is chosen by the user and can be updated from the Profile page.
 
-#### Post Model
+- #### Post Model
 
-- ID and time of creation is given automatically. 
+  - ID and time of creation is given automatically. 
 
-- Users can choose a title, excerpt, content and image, while author is automatically set to the signed in users ID.
+  - Users can choose a title, excerpt, content and image, while author is automatically set to the signed in users ID.
 
-- Likes will be 0 when created, and has a Many to Many relationship with the User model, meaning that many users can like the same post, and the same user can like many posts.
+  - Likes will be 0 when created, and has a Many to Many relationship with the User model, meaning that many users can like the same post, and the same user can like many posts.
 
-#### Comment Model
+- #### Comment Model
 
-- ID and time of creation is given automatically.
+  - ID and time of creation is given automatically.
 
-- Users can choose a body, while author is automatically set to the signed in users ID.
+  - Users can choose a body, while author is automatically set to the signed in users ID.
 
-- The post field has a FK to the Post model, to make sure the comment is assigned to the correct blog post.
+  - The post field has a FK to the Post model, to make sure the comment is assigned to the correct blog post.
 
 ### Wireframes
 
@@ -216,6 +216,97 @@ This approach is especially powerful when working in teams, but still made the d
 As evident by the above image, not all user stories were finished in the time frame of this project. These will be implemented and possibly added to in the future.
 
 ## Features
+
+The following section will provide an overview of the features included in Tech Blog. The site consists of several pages, all with a consistent layout and logical paths to take. Some pages can only be accessed by members, while others are accessible to all. All features are fully responsive across all devices.
+
+- ### Navigation Bar
+
+  - Featured at the top of all pages is a nav bar, which holds the logo for the site to the left, as well as navigation links on the right side. 
+
+  - When a new user visits the site, the nav bar will hold an 'Account' option that, when clicked, shows two additional links to either sign in or register.
+
+  - A signed in user will see their username instead which, when clicked, shown links to either create a post, the users profile, or to sign out.
+
+  - When viewed on smaller devices, the navigation links will collapse into a so-called burger icon to help keep the nav bar clean.
+
+  <details>
+
+  <summary>Navigation Bar</summary>
+
+  ![Navigation Bar](static/images/readme-images/navbar-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Navigation Bar - Signed In</summary>
+
+  ![Navigation Bar - signed in](static/images/readme-images/navbar-desk-auth.png)
+
+  </details>
+
+  <details>
+
+  <summary>Navigation Bar - Mobile</summary>
+
+  ![Navigation Bar - mobile](static/images/readme-images/navbar-collapsed.png)
+
+  </details>
+
+  <details>
+
+  <summary>Navigation Bar - Mobile Dropdown</summary>
+
+  ![Navigation Bar - mobile dropdown](static/images/readme-images/navbar-clicked.png)
+
+  </details>
+
+- ### Home Page
+
+  - The home page is the main blog feed where users can browse posts and get an idea of what the posts are about.
+
+  - Each post entry is listed with newest at the top, with a pagination of five posts per page.
+
+  - Information about author, date posted and number of comments and likes is also visible from here.
+
+  <details>
+
+  <summary>Home Page - Desktop</summary>
+
+  ![Home Page - Desktop](static/images/readme-images/home-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Home Page - Mobile</summary>
+
+  ![Home Page - Mobile](static/images/readme-images/home-mobile.png)
+
+  </details>
+
+- ### Footer
+
+  - The footer is a simple bar in clear white that breaks off from the near white background to create a subtle and pleasing element at the bottom of the page.
+
+  - To the left is a short copyright text, and on the right side users can find links to different social media plattforms. Since Tech Blog is for educational purposes the links directs the user to the homepage of each plattform respectively.
+
+  <details>
+
+  <summary>Footer - Desktop</summary>
+
+  ![Footer - Desktop](static/images/readme-images/footer-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Footer - Mobile</summary>
+
+  ![Footer - Mobile](static/images/readme-images/footer-mobile.png)
+
+  </details>
+
 ### Features Left to Implement
 
 ## Testing
