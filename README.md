@@ -584,7 +584,274 @@ The following section will provide an overview of the features included in Tech 
 - Automatically resize images uploaded by users to improve site performance.
 
 ## Testing
-### Validator Testing
+### Code Validation
+
+To ensure all code for Tech Blog is correct, validation through various validators was performed. The results are listed below.
+
+- ### HTML Validation
+
+  All HTML code was checked with the [W3C Markup Validator](https://validator.w3.org/). One error was found on the Register page, which was attributed to code provided by the built in authentication system of Django, and could therefore not be addressed. No other error or warnings were found.
+
+  <details>
+
+  <summary>Home Page</summary>
+
+  ![Home Page](static/images/readme-images/testing/html-home.png)
+
+  </details>
+
+  <details>
+
+  <summary>About Page</summary>
+
+  ![About Page](static/images/readme-images/testing/html-about.png)
+
+  </details>
+
+  <details>
+
+  <summary>Register Page</summary>
+
+  ![Register Page](static/images/readme-images/testing/html-register.png)
+
+  </details>
+
+  <details>
+
+  <summary>Sign In Page</summary>
+
+  ![Sign In Page](static/images/readme-images/testing/html-signin.png)
+
+  </details>
+
+  <details>
+
+  <summary>Profile Page</summary>
+
+  ![Profile Page](static/images/readme-images/testing/html-profile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Sign Out Page</summary>
+
+  ![Sign Out Page](static/images/readme-images/testing/html-signout.png)
+
+  </details>
+
+  <details>
+
+  <summary>Delete Account Page</summary>
+
+  ![Delete Account Page](static/images/readme-images/testing/html-account-delete.png)
+
+  </details>
+
+  <details>
+
+  <summary>Create Post Page</summary>
+
+  ![Create Post Page](static/images/readme-images/testing/html-post-create.png)
+
+  </details>
+
+  <details>
+
+  <summary>Post Detail Page</summary>
+
+  ![Post Detail Page](static/images/readme-images/testing/html-post-detail.png)
+
+  </details>
+
+  <details>
+
+  <summary>Post Update Page</summary>
+
+  ![Post Update Page](static/images/readme-images/testing/html-post-update.png)
+
+  </details>
+
+  <details>
+
+  <summary>Post Delete Page</summary>
+
+  ![Post Update Page](static/images/readme-images/testing/html-post-delete.png)
+
+  </details>
+
+- ### CSS Validation
+
+  All CSS code was checked with the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). No errors or warnings were found.
+
+  <details>
+
+  <summary>CSS code Results</summary>
+
+  ![CSS code Results](static/images/readme-images/testing/css-validation.png)
+
+  </details>
+
+- ### JavaScript Validation
+
+  All JavaScript code was checked with the [JSHint Code Quality Tool](https://jshint.com/). No errors or warnings were found.
+
+  <details>
+
+  <summary>JavaScript code Results</summary>
+
+  ![JavaScript code Results](static/images/readme-images/testing/jshint.png)
+
+  </details>
+
+- ### Python Validation
+
+  All Python code was checked with the [PEP8 Online Validator](http://pep8online.com/). No errors or warnings were found.
+
+  <details>
+
+  <summary>Blog App admin.py</summary>
+
+  ![Blog App admin.py](static/images/readme-images/testing/pep8-blog-admin.png)
+
+  </details>
+
+  <details>
+
+  <summary>Blog App apps.py</summary>
+
+  ![Blog App apps.py](static/images/readme-images/testing/pep8-blog-apps.png)
+
+  </details>
+
+  <details>
+
+  <summary>Blog App forms.py</summary>
+
+  ![Blog App forms.py](static/images/readme-images/testing/pep8-blog-forms.png)
+
+  </details>
+
+  <details>
+
+  <summary>Blog App models.py</summary>
+
+  ![Blog App models.py](static/images/readme-images/testing/pep8-blog-models.png)
+
+  </details>
+
+  <details>
+
+  <summary>Blog App urls.py</summary>
+
+  ![Blog App urls.py](static/images/readme-images/testing/pep8-blog-urls.png)
+
+  </details>
+
+  <details>
+
+  <summary>Blog App views.py</summary>
+
+  ![Blog App views.py](static/images/readme-images/testing/pep8-blog-views.png)
+
+  </details>
+
+  <details>
+
+  <summary>Blog App test_forms.py</summary>
+
+  ![Blog App test_forms.py](static/images/readme-images/testing/pep8-blog-test_forms.png)
+
+  </details>
+
+  <details>
+
+  <summary>Blog App test_models.py</summary>
+
+  ![Blog App test_models.py](static/images/readme-images/testing/pep8-blog-test_models.png)
+
+  </details>
+
+  <details>
+
+  <summary>Blog App test_urls.py</summary>
+
+  ![Blog App test_urls.py](static/images/readme-images/testing/pep8-blog-test_urls.png)
+
+  </details>
+
+  <details>
+
+  <summary>Blog App test_views.py</summary>
+
+  ![Blog App test_views.py](static/images/readme-images/testing/pep8-blog-test_views.png)
+
+  </details>
+
+  <details>
+
+  <summary>Users App apps.py</summary>
+
+  ![Users App apps.py](static/images/readme-images/testing/pep8-users-apps.png)
+
+  </details>
+
+  <details>
+
+  <summary>Users App backends.py</summary>
+
+  ![Users App backends.py](static/images/readme-images/testing/pep8-users-backends.png)
+
+  </details>
+
+  <details>
+
+  <summary>Users App forms.py</summary>
+
+  ![Users App forms.py](static/images/readme-images/testing/pep8-users-forms.png)
+
+  </details>
+
+  <details>
+
+  <summary>Users App urls.py</summary>
+
+  ![Users App urls.py](static/images/readme-images/testing/pep8-users-urls.png)
+
+  </details>
+
+  <details>
+
+  <summary>Users App views.py</summary>
+
+  ![Users App views.py](static/images/readme-images/testing/pep8-users-views.png)
+
+  </details>
+
+  <details>
+
+  <summary>Users App test_forms.py</summary>
+
+  ![Users App test_forms.py](static/images/readme-images/testing/pep8-users-test_forms.png)
+
+  </details>
+
+  <details>
+
+  <summary>Users App test_urls.py</summary>
+
+  ![Users App test_urls.py](static/images/readme-images/testing/pep8-users-test_urls.png)
+
+  </details>
+
+  <details>
+
+  <summary>Users App test_views.py</summary>
+
+  ![Users App test_views.py](static/images/readme-images/testing/pep8-users-test_views.png)
+
+  </details>
+
 ### Responsive Testing
 ### Lighthouse Testing
 ### Links and Form Testing
