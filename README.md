@@ -423,7 +423,165 @@ The following section will provide an overview of the features included in Tech 
 
   </details>
 
+- ### Create Post Page
+
+  - Signed in users can access this page from the nav bar, and from here they can create post entries by filling out a form.
+
+  - Users choose a title, excerpt, content and an image for their post, while ID, author and time of creation is given automatically.
+
+  - If the user don't upload an image for their post, a generic placeholder image is provided for them.
+
+  <details>
+
+  <summary>Create Post Page - Desktop</summary>
+
+  ![Create Post Page - Desktop](static/images/readme-images/create-post-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Create Post Page - Mobile</summary>
+
+  ![Create Post Page - Mobile](static/images/readme-images/create-post-mobile.png)
+
+  </details>
+
+- ### Post Detail Page
+
+  - When user creates or clicks on a post from the home page, the post detail page is shown, with the full content of the post, along with any comments that has been left by users on the post.
+
+  - There is a like button that users can toggle to like / unlike posts and show appreciation to fellow members. 
+
+  - If the author of the post visits the page, there are buttons for updating the post, as well as deleting it.
+
+  - If a user leaves a comment and later wants to delete it, there is a small button on the comments written by the signed in user to delete their own comments. This will trigger a modal to ask for confirmation to prevent accidental deletion.
+
+  <details>
+
+  <summary>Post Detail Page - Desktop</summary>
+
+  ![Post Detail Page - Desktop](static/images/readme-images/post-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Liked & Authors Post - Desktop</summary>
+
+  ![Liked & Authors Post - Desktop](static/images/readme-images/post-liked-auth-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Authors Post - Mobile</summary>
+
+  ![Authors Post - Mobile](static/images/readme-images/post-auth-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Liked Post - Mobile</summary>
+
+  ![Liked Post - Mobile](static/images/readme-images/post-liked-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Delete Comment</summary>
+
+  ![Delete Comment](static/images/readme-images/delete-comment.png)
+
+  </details>
+
+- ### Update Post
+
+  - If the author of a post wishes to edit or update their post, they click the button on the detail page and a form for updating it is shown.
+
+  - All fields are prepopulated with the existing data to simplify the process for the user.
+
+  - If the user wishes to go back without saving any changes, they can simply click the 'Go back' link at the bottom.
+
+  <details>
+
+  <summary>Update Post Page - Desktop</summary>
+
+  ![Update Post Page - Desktop](static/images/readme-images/update-post-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Update Post Page - Mobile</summary>
+
+  ![Update Post Page - Mobile](static/images/readme-images/update-post-mobile.png)
+
+  </details>
+
+- ### Delete Post Page
+
+  - If the author of a post wishes to delete it, they click the button on the detail page and a confirmation page is shown.
+
+  - If the user wishes to go back without deleting the post, they can simply click the 'Keep the post' link at the bottom.
+
+  <details>
+
+  <summary>Delete Post Page - Desktop</summary>
+
+  ![Delete Post Page - Desktop](static/images/readme-images/delete-post-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Delete Post Page - Mobile</summary>
+
+  ![Delete Post Page - Mobile](static/images/readme-images/delete-post-mobile.png)
+
+  </details>
+
+- ### Messages
+
+  - To keep users informed, simple message flashes will be displayed on various user interactions, such as creating a post, registering an account etc. These will only be visible a few seconds before dissapearing by themself, to not interfere with the UX.
+
+  <details>
+
+  <summary>Create Account Message</summary>
+
+  ![Create Account Message](static/images/readme-images/msg-account-create.png)
+
+  </details>
+
+  <details>
+
+  <summary>Create Post Message</summary>
+
+  ![Create Post Message](static/images/readme-images/msg-post-create.png)
+
+  </details>
+
+  <details>
+
+  <summary>Delete Post Message</summary>
+
+  ![Delete Post Message](static/images/readme-images/msg-post-delete.png)
+
+  </details>
+
 ### Features Left to Implement
+
+- Password reset through the registered e-mail, if the user forgets their password.
+
+- See a list of the users own post, to easier manage their own content.
+
+- A nicer format for writing the body of post entries, like a rich text editor.
+
+- Search function to find a certain post or posts about a certain topic.
+
+- Automatically resize images uploaded by users to improve site performance.
 
 ## Testing
 ### Validator Testing
