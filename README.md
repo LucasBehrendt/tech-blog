@@ -853,8 +853,198 @@ To ensure all code for Tech Blog is correct, validation through various validato
   </details>
 
 ### Responsive Testing
+
+- You can open DevTools with keyboard shortcuts (CMD+Opt+I for Mac OS or Ctrl+Shift+I for Linux and Windows), through the menu bar in the top right corner and go to "More Tools" > "Developer Tools." or by right-clicking on any web page and select "Inspect". To test responsiveness, click on the "device" icon on the left side, above the source code window or with the keyboard shortcut CMD+Shift+M for Mac OS or Ctrl+Shift+M for Linux and Windows. Under "Dimensions" you can choose between different devices to emulate, or you can drag the handles to resize the window to your preferred screen width by choosing "Responsive".
+
+- To test the responsiveness of the website multiple devices were used to browse and create posts, register accounts etc including a Desktop, Laptop, iPad Air, Samsung Galaxy S20, iPhone 12, iPhone X, and iPhone 8. The site was also tested on different browsers, such as Chrome, Edge, Safari and Firefox.
+
+- Using Chrome DevTools, the site was optimized for all screen widths down to at least 260px.
+
 ### Lighthouse Testing
+
+- The Lighthouse tool in Chrome DevTools was used to test the sites performance, accessibility, best practices and SEO. The website performed well in the tests, indicating a well-structured, highly accessible site.
+
+- A console error that seems to originate from some Bootstrap JavaScript code was caught by the Lighthouse tool. The error had to do with the alert function to display various messages to the user. Since the code was not written by the developer it could not be adressed. This had a slight impact on the "best practices" test but was not substantial enough to raise any real concern.
+
+  <details>
+
+  <summary>Lighthouse - About Page - Desktop</summary>
+
+  ![Lighthouse - About Page - Desktop](static/images/readme-images/testing/lighthouse-about.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - About Page - Mobile</summary>
+
+  ![Lighthouse - About Page - Mobile](static/images/readme-images/testing/lighthouse-about-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Create Post Page - Desktop</summary>
+
+  ![Lighthouse - Create Post Page - Desktop](static/images/readme-images/testing/lighthouse-create-post.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Create Post Page - Mobile</summary>
+
+  ![Lighthouse - Create Post Page - Mobile](static/images/readme-images/testing/lighthouse-create-post-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Delete Account Page - Desktop</summary>
+
+  ![Lighthouse - Delete Account Page - Desktop](static/images/readme-images/testing/lighthouse-account-delete.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Delete Account Page - Mobile</summary>
+
+  ![Lighthouse - Delete Account Page - Mobile](static/images/readme-images/testing/lighthouse-account-delete-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Delete Post Page - Desktop</summary>
+
+  ![Lighthouse - Delete Post Page - Desktop](static/images/readme-images/testing/lighthouse-delete-post.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Delete Post Page - Mobile</summary>
+
+  ![Lighthouse - Delete Post Page - Mobile](static/images/readme-images/testing/lighthouse-delete-post-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Home Page - Desktop</summary>
+
+  ![Lighthouse - Home Page - Desktop](static/images/readme-images/testing/lighthouse-home.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Home Page - Mobile</summary>
+
+  ![Lighthouse - Home Page - Mobile](static/images/readme-images/testing/lighthouse-home-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Post Detail Page - Desktop</summary>
+
+  ![Lighthouse - Post Detail Page - Desktop](static/images/readme-images/testing/lighthouse-post-detail.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Post Detail Page - Mobile</summary>
+
+  ![Lighthouse - Post Detail Page - Mobile](static/images/readme-images/testing/lighthouse-post-detail-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Profile Page - Desktop</summary>
+
+  ![Lighthouse - Profile Page - Desktop](static/images/readme-images/testing/lighthouse-profile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Profile Page - Mobile</summary>
+
+  ![Lighthouse - Profile Page - Mobile](static/images/readme-images/testing/lighthouse-profile-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Register Page - Desktop</summary>
+
+  ![Lighthouse - Register Page - Desktop](static/images/readme-images/testing/lighthouse-register.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Register Page - Mobile</summary>
+
+  ![Lighthouse - Register Page - Mobile](static/images/readme-images/testing/lighthouse-register-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Sign In Page - Desktop</summary>
+
+  ![Lighthouse - Sign In Page - Desktop](static/images/readme-images/testing/lighthouse-signin.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Sign In Page - Mobile</summary>
+
+  ![Lighthouse - Sign In Page - Mobile](static/images/readme-images/testing/lighthouse-signin-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Sign Out Page - Desktop</summary>
+
+  ![Lighthouse - Sign Out Page - Desktop](static/images/readme-images/testing/lighthouse-signout.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Sign Out Page - Mobile</summary>
+
+  ![Lighthouse - Sign Out Page - Mobile](static/images/readme-images/testing/lighthouse-signout-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Update Post Page - Desktop</summary>
+
+  ![Lighthouse - Update Post Page - Desktop](static/images/readme-images/testing/lighthouse-update-post.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Update Post Page - Mobile</summary>
+
+  ![Lighthouse - Update Post Page - Mobile](static/images/readme-images/testing/lighthouse-update-post-mobile.png)
+
+  </details>
+
 ### Links and Form Testing
+### User Story Implementation 
+### Automated Testing
 ### Fixed Bugs
 ### Known/Unfixed Bugs
 
