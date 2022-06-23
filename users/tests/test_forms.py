@@ -1,5 +1,5 @@
 from django.test import TestCase
-from users.forms import UserRegisterForm
+from users.forms import UserRegisterForm, UserUpdateForm
 
 
 class TestForm(TestCase):
@@ -34,3 +34,15 @@ class TestForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors['password2'][0],
                          'The two password fields didn’t match.')
+
+    def test_user_update_form(self):
+        form = UserUpdateForm(
+            data={
+                'username': 'testUser_updated',
+                'email': 'test_updated@email.com',
+            }
+        )
+
+        self.assertTrue(form.is_valid())
+        self.assertEqual(form.data['username'], 'testUser_updated')
+        self.assertEqual(form.data['email'], 'test_updated@email.com')
