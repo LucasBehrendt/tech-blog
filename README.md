@@ -335,6 +335,8 @@ The following section will provide an overview of the features included in Tech 
 
   - The built in authentication system in Django worked very well for this and if for instance a username is already in use, a message is shown to the user to inform of this.
 
+  - Case insensitive usernames was implemented to improve UX and not having to worry about duplicate usernames.
+
   - If a user clicks on Register by misstake and already have an account, a link at the bottom takes the user to the sign in page instead.
 
   <details>
@@ -375,7 +377,9 @@ The following section will provide an overview of the features included in Tech 
 
 - ### Profile Page
 
-  - The profile page is accessible for signed in users, and features the users info with a form to update it if desirable.
+  - The profile page is accessible for signed in users, and holds the users information with a form to update it if desirable.
+
+  - To prevent users updating their usernames to an already existing name, form handling was implemented similar to the register form.
 
   - Users can also delete their account from the link at the bottom if they wish, to make sure no info is stored on them. If clicked, the user is taken to a confirmation screen to make sure an account is not deleted by accident.
 
