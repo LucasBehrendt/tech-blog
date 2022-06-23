@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Inquiry form -->
+<div class="container my-5">
+    <div class="px-md-5 px-3 py-3 m-md-5 border rounded bg-white">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend class="border-bottom mb-4">Send an inquiry</legend>
+                <p>If you wish to get in touch with us to either ask a question or contribute to the site, please fill in the form!</p>
+                {{ form|crispy }}
+            </fieldset>
+            <div>
+                <button class="btn btn-secondary my-1" type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
