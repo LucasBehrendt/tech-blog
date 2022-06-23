@@ -1042,7 +1042,90 @@ To ensure all code for Tech Blog is correct, validation through various validato
 
   </details>
 
-### Links and Form Testing
+### Manual Testing
+
+To make sure all interactions and forms / links work as intended, manual testing was performed.
+
+| Status | Home Page / Navigation Bar |
+|:------:| -------------------------- |
+| &check; | Clicking logo loads homepage |
+| &check; | Clicking Home loads homepage |
+| &check; | Clicking About loads about page |
+| &check; | Clicking Sign In loads sign in page |
+| &check; | Clicking Register In loads register page |
+| &check; | Clicking Create Post loads post creation page (signed in) |
+| &check; | Clicking Profile loads profile page (signed in) |
+| &check; | Clicking Sign Out signs user out and loads sign out page (signed in) |
+| &check; | Clicking a post image or 'Visit Post' loads post detail page |
+| &check; | Clicking pagination buttons loads next / previous page |
+| &check; | Clicking social media links in footer opens in new tab |
+
+| Status | Create Post Page |
+|:------:| ---------------- |
+| &check; | Filling out form incorrectly gives error message (signed in) |
+| &check; | Uploading unsupported image format gives error message (signed in) |
+| &check; | Filling out form correctly saves post and redirects to post detail page (signed in) |
+| &check; | Not providing an image is accepted, placeholder is provided instead (signed in) |
+
+| Status | Post Detail Page |
+|:------:| ---------------- |
+| &check; | Clicking like icon toggles like / unlike (signed in) |
+| &check; | Clicking Update post loads post update page (signed in, author) |
+| &check; | Clicking Delete post loads confirm delete page (signed in, author) |
+| &check; | Posting a comment reloads page and saves the comment (signed in) |
+| &check; | Clicking Delete comment loads confirm delete modal (signed in, author of comment) |
+| &check; | Confirming delete comment deletes it completely (signed in, author of comment) |
+
+| Status | Update Post Page |
+|:------:| ---------------- |
+| &check; | All fields are prepopulated with previous data (signed in, author) |
+| &check; | Filling out form incorrectly gives error message (signed in, author) |
+| &check; | Uploading unsupported image format gives error message (signed in, author) |
+| &check; | Filling out form correctly saves post and redirects to post detail page (signed in, author) |
+| &check; | Not providing an image is accepted, placeholder is provided instead (signed in, author) |
+| &check; | Clicking Go back takes user back to post detail page (signed in, author) |
+
+| Status | Delete Post Page |
+|:------:| ---------------- |
+| &check; | Clicking Delete button deletes the post completely and redirects to home (signed in, author) |
+| &check; | Clicking Keep the post takes user back to post detail page (signed in, author) |
+
+| Status | Sign In Page |
+|:------:| ---------------- |
+| &check; | Filling out form incorrectly gives error message |
+| &check; | Signin in with valid credentials authenticates user and loads home page |
+| &check; | Clicking Sign Up loads register page |
+
+| Status | Register Page |
+|:------:| ---------------- |
+| &check; | Filling out form incorrectly gives error message |
+| &check; | Registering with valid credentials authenticates user and loads home page |
+| &check; | Clicking Sign In loads sign in page |
+
+| Status | Profile Page |
+|:------:| ---------------- |
+| &check; | All fields are prepopulated with previous data (signed in) |
+| &check; | Filling out form incorrectly gives error message (signed in) |
+| &check; | Updating user info and clicking Update saves new data (signed in) |
+| &check; | Clicking Delete account loads confirm delete page (signed in) |
+
+| Status | Delete Account Page |
+|:------:| ---------------- |
+| &check; | Clicking Delete button deletes the user completely and redirects to home (signed in) |
+| &check; | Clicking Keep my account takes user back to profile page (signed in) |
+
+| Status | Sign Out Page |
+|:------:| ---------------- |
+| &check; | Clicking Back to home page loads home page |
+| &check; | Clicking Sign In loads sign in page |
+
+| Status | Error Pages |
+|:------:| ---------------- |
+| &check; | Loads 404 page when a user gives an invalid url |
+| &check; | Loads 403 page when a user tries to access a restricted url |
+| &check; | Loads 500 page when an error occurs |
+| &check; | Clicking Take me back to safety! loads home page |
+
 ### User Story Implementation 
 ### Automated Testing
 ### Fixed Bugs
