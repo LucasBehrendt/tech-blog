@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
+from .models import Inquiry
 from .forms import UserRegisterForm, UserUpdateForm
 
 
@@ -56,3 +57,14 @@ class DeleteUser(LoginRequiredMixin,
     def test_func(self):
         user = self.get_object()
         return self.request.user == user
+
+
+class SendInquiry(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Inquiry
+    fields = ['email', 'inquiry']
+    success_message = 'Your inquiry has been sent, thank you!'
+    success_url = '/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
