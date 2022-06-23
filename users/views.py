@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -5,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, UserUpdateForm
 
 
 class Register(CreateView):
@@ -25,14 +26,17 @@ class Register(CreateView):
 
 class Profile(LoginRequiredMixin,
               UserPassesTestMixin,
-              SuccessMessageMixin,
               UpdateView):
     """Profile page view"""
     model = User
-    fields = ['username', 'email']
+    form_class = UserUpdateForm
     template_name = 'users/profile.html'
-    success_message = 'Your profile was updated successfully!'
-    success_url = '/profile/{id}'
+
+    def form_valid(self, form):
+        user = form.save()
+        messages.success(self.request,
+                         'Your profile was updated successfully!')
+        return redirect('profile', pk=user.id)
 
     def test_func(self):
         user = self.get_object()
