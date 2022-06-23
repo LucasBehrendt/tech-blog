@@ -1,6 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
+from users.models import Inquiry
 
 
 class TestViews(TestCase):
@@ -87,3 +88,31 @@ class TestViews(TestCase):
         self.assertEqual(user.first(), None)
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, '/')
+
+    def test_inquiry_page_GET(self):
+        logged_in = self.client.login(
+            username='testuser', password='testpassword'
+        )
+        url = reverse('inquiry')
+        response = self.client.get(url)
+
+        self.assertTrue(logged_in)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'users/inquiry_form.html')
+
+    def test_inquiry_page_POST(self):
+        logged_in = self.client.login(
+            username='testuser', password='testpassword'
+        )
+        url = reverse('inquiry')
+        response = self.client.post(url, {
+            'email': 'test@email.com',
+            'inquiry': 'testInquiry',
+        })
+
+        inquiry = Inquiry.objects.all()
+
+        self.assertTrue(logged_in)
+        self.assertEqual(len(inquiry), 1)
+        self.assertEqual(inquiry.first().email, 'test@email.com')
+        self.assertEqual(response.status_code, 302)

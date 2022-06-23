@@ -26,3 +26,7 @@ class TestUrls(TestCase):
     def test_delete_user_url(self):
         url = reverse('delete_user', args=[5])
         self.assertEqual(resolve(url).func.view_class, views.DeleteUser)
+
+    def test_inquiry_url(self):
+        url = reverse('inquiry')
+        self.assertEqual(resolve(url).func.view_class, views.SendInquiry)

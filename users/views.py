@@ -60,6 +60,7 @@ class DeleteUser(LoginRequiredMixin,
 
 
 class SendInquiry(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    """Send inquiry view"""
     model = Inquiry
     fields = ['email', 'inquiry']
     success_message = 'Your inquiry has been sent, thank you!'
