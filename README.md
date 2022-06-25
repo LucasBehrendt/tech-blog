@@ -29,6 +29,8 @@ The following user stories were used in an agile approach when creating the appl
 
   - As a Site User I can delete my profile so that there is no stored info on me.
 
+  - As a Site User I can reset my password using my registered e-mail so that I can gain access to my account if I forget my password.
+
 - #### User Navigation
 
   - As a Site User I can view a paginated list of posts so that I can easily select a post to view.
@@ -54,8 +56,6 @@ The following user stories were used in an agile approach when creating the appl
   - As a Site User I can delete my own comments so that I can control my own content.
 
   - As a Site User I can contact the administration of the blog so that I can ask questions or help with the blog.
-
-  - As a Site User I can reset my password using my registered e-mail so that I can gain access to my account if I forget my password.
 
 ### Structure
 
@@ -228,8 +228,6 @@ This approach is especially powerful when working in teams, but still made the d
 ![GitHub Project Board](static/images/readme-images/project-board.png)
 
 </details>
-
-As evident by the above image, not all user stories were finished in the time frame of this project. These will be implemented and possibly added to in the future. CHANGE?
 
 ## Features
 
@@ -1216,7 +1214,113 @@ To make sure all interactions and forms / links work as intended, manual testing
 | &check; | Clicking Take me back to safety! loads home page |
 
 ### User Story Implementation 
+
+- #### Site Admin
+
+  - As a Site Admin I can manage the post content on the blog so that I can make sure no objectionable posts are present.
+
+    - Implemented as intended.
+
+  - As a Site Admin I can manage the comments on the blog posts so that I can make sure no objectionable comments are present.
+
+    - Implemented as intended.
+
+- #### User Registration
+
+  - As a Site User I can register an account so that I can make posts and comments.
+
+    - Implemented as intended.
+
+  - As a Site User I can update my information so that I can personalize my profile.
+
+    - Implemented as intended. 
+
+  - As a Site User I can delete my profile so that there is no stored info on me.
+
+    - Implemented as intended.
+
+- #### User Navigation
+
+  - As a Site User I can view a paginated list of posts so that I can easily select a post to view.
+
+    - Implemented as intended.
+
+  - As a Site User I can click on a post so that I can read the full text.
+
+    - Implemented as intended.
+
+  - As a Site User I can view how many likes a post have so that I can see which posts are popular.
+
+    - Implemented as intended.
+
+  - As a Site User I can view comments on a post so that I can read what other users think.
+
+    - Implemented as intended.
+
+- #### User Interaction
+
+  - As a Site User I can like / unlike a post so that I can interact with the content and show appreciation.
+
+    - Implemented as intended.
+
+  - As a Site User I can create posts so that I can provide content to the community.
+
+    - Implemented as intended.
+
+  - As a Site User I can edit or delete my own posts so that I can control my own content.
+
+    - Implemented as intended.
+
+  - As a Site User I can leave comments on a post so that I can join in the conversation.
+
+    - Implemented as intended.
+
+  - As a Site User I can delete my own comments so that I can control my own content.
+
+    - Implemented as intended.
+
+  - As a Site User I can contact the administration of the blog so that I can ask questions or help with the blog.
+
+    - Implemented as intended.
+
+#### User Stories Not Implemented
+
+- #### User Registration
+
+  - As a Site User I can reset my password using my registered e-mail so that I can gain access to my account if I forget my password.
+
+    - Unfortunately not implemented due to time constraints. After getting feedback on the site this is the most prioritized feature to implement when time permits.
+
+- #### User Navigation
+
+  - As a Site User I can view a list of my own posts so that I can see my content and have easy access to it.
+
+    - Unfortunately not implemented due to time constraints. Planned to be implemented in the future.
+
 ### Automated Testing
+
+Using Django TestCase extensive python testing was performed, which helped show the benefits of writing tests for code. For this project an MVP was prioritized, therefore the application was built before the tests were written. After getting acquainted with testing python code on this project, a test-driven development will be adopted for future projects.
+
+46 tests were written to test as much of the code as possible. The result is presented below.
+
+<details>
+
+<summary>Unittest - Test Results</summary>
+
+![Unittest - Test Results](static/images/readme-images/testing/unittest.png)
+
+</details>
+
+As a way of revealing the coverage of the tests, the coverage package was used to measure a 97% coverage result.
+
+<details>
+
+<summary>Unittest - Coverage Results</summary>
+
+![Unittest - Test Results](static/images/readme-images/testing/coverage-report.png)
+
+</details>
+
 ### Fixed Bugs
 ### Known/Unfixed Bugs
 
