@@ -3,7 +3,7 @@ from users.forms import UserRegisterForm, UserUpdateForm
 
 
 class TestForm(TestCase):
-    """Tests for blog app form"""
+    """Tests for users app forms"""
 
     def test_user_register_form(self):
         form = UserRegisterForm(

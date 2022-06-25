@@ -53,6 +53,10 @@ The following user stories were used in an agile approach when creating the appl
 
   - As a Site User I can delete my own comments so that I can control my own content.
 
+  - As a Site User I can contact the administration of the blog so that I can ask questions or help with the blog.
+
+  - As a Site User I can reset my password using my registered e-mail so that I can gain access to my account if I forget my password.
+
 ### Structure
 
 The site is structured with simplicity and accessibility in mind, to help users intuitively navigate the site. The landing page gives the user relevant information about each post without cluttering the feed. A simple, fully responsive navigation helps keep the flow of the site balanced when navigating and interacting with the application. All pages are carefully structured to be consistent and pleasing to browse. All user interactions, such as registering an account or creating a post have logical responses and provide relevant feedback.
@@ -69,7 +73,7 @@ To help facilitate a logical flow of the application during the development proc
 
 ### Data Model
 
-The database used for the application requires a Post and Comment model. The user authentication system is included in the Django framework and a User model was therefore already provided. To get an idea of the relationships and fields required in the models, an ERD (Entity Relationship Diagram) was created using [Lucidchart](https://www.lucidchart.com/pages/).
+The database used for the application requires a Post, Comment and Inquiry model. The user authentication system is included in the Django framework and a User model was therefore already provided. To get an idea of the relationships and fields required in the models, an ERD (Entity Relationship Diagram) was created using [Lucidchart](https://www.lucidchart.com/pages/).
 
 <details>
 
@@ -101,6 +105,12 @@ The database used for the application requires a Post and Comment model. The use
 
   - The post field has a FK to the Post model, to make sure the comment is assigned to the correct blog post.
 
+- #### Inquiry Model
+
+  - ID and time of creation is given automatically.
+
+  - Users can choose an email adress and write an inquiry, while author is automatically set to the signed in users ID.
+
 ### Wireframes
 
 Wireframes were created using Balsamiq to help the planning process and get an idea of how the site was to be built. The finished site came very close to these mockups, with some minor adjustments.
@@ -114,6 +124,9 @@ Home page
 
 About page
 ![Desktop wireframe about](static/images/readme-images/wireframes/Desktop-about.png)
+
+Contact page
+![Desktop wireframe contact](static/images/readme-images/wireframes/Desktop-send_inquiry.png)
 
 Register page
 ![Desktop wireframe register](static/images/readme-images/wireframes/Desktop-register.png)
@@ -153,6 +166,9 @@ Home page<br>
 
 About page<br>
 ![Mobile wireframe about](static/images/readme-images/wireframes/Mobile-about.png)
+
+Contact page<br>
+![Mobile wireframe contact](static/images/readme-images/wireframes/Mobile-send_inquiry.png)
 
 Register page<br>
 ![Mobile wireframe register](static/images/readme-images/wireframes/Mobile-register.png)
@@ -213,7 +229,7 @@ This approach is especially powerful when working in teams, but still made the d
 
 </details>
 
-As evident by the above image, not all user stories were finished in the time frame of this project. These will be implemented and possibly added to in the future.
+As evident by the above image, not all user stories were finished in the time frame of this project. These will be implemented and possibly added to in the future. CHANGE?
 
 ## Features
 
@@ -311,6 +327,8 @@ The following section will provide an overview of the features included in Tech 
 
   - The about page serves as a short introduction to the blog and what users can expect to find. The text emphasize that everyone is welcome to become members and start sharing their thought with other members, regardless of whether a user is looking for tips, or want to write reviews etc.
 
+  - A link to the contact page can be found here, that lets users send an inquiry to the administration of the site.
+
   - A fitting image of a guy overwhelmed with tech gadgets helps relate to users.
 
   <details>
@@ -326,6 +344,28 @@ The following section will provide an overview of the features included in Tech 
   <summary>About Page - Mobile</summary>
 
   ![About Page - Mobile](static/images/readme-images/about-mobile.png)
+
+  </details>
+
+- ### Contact Page
+
+  - If a user wishes to come in contact with the administraion of the site, they can send an inquiry from the contact page. 
+
+  - The form lets signed in users choose an email for a response, and write an inquiry ELABORATE!
+
+  <details>
+
+  <summary>Contact Page - Desktop</summary>
+
+  ![Contact Page - Desktop](static/images/readme-images/contact-desk.png)
+
+  </details>
+
+  <details>
+
+  <summary>Contact Page - Mobile</summary>
+
+  ![Contact Page - Mobile](static/images/readme-images/contact-mobile.png)
 
   </details>
 
@@ -409,7 +449,9 @@ The following section will provide an overview of the features included in Tech 
 
 - ### Sign Out Page
 
-  - When a user clicks the sign out link a page with a message stating they have been signed out is shown. Two links to the home page and back to the sign in page can also be found.
+  - When a user clicks the sign out link a page with a message stating they have been signed out is shown. 
+  
+  - Two links, to the home page and back to the sign in page can also be found.
 
   <details>
 
@@ -609,6 +651,14 @@ To ensure all code for Tech Blog is correct, validation through various validato
   <summary>About Page</summary>
 
   ![About Page](static/images/readme-images/testing/html-about.png)
+
+  </details>
+
+  <details>
+
+  <summary>Contact Page</summary>
+
+  ![Contact Page](static/images/readme-images/testing/html-contact.png)
 
   </details>
 
@@ -818,6 +868,14 @@ To ensure all code for Tech Blog is correct, validation through various validato
 
   <details>
 
+  <summary>Users App models.py</summary>
+
+  ![Users App models.py](static/images/readme-images/testing/pep8-users-models.png)
+
+  </details>
+
+  <details>
+
   <summary>Users App urls.py</summary>
 
   ![Users App urls.py](static/images/readme-images/testing/pep8-users-urls.png)
@@ -883,6 +941,22 @@ To ensure all code for Tech Blog is correct, validation through various validato
   <summary>Lighthouse - About Page - Mobile</summary>
 
   ![Lighthouse - About Page - Mobile](static/images/readme-images/testing/lighthouse-about-mobile.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Contact Page - Desktop</summary>
+
+  ![Lighthouse - Contact Page - Desktop](static/images/readme-images/testing/lighthouse-contact.png)
+
+  </details>
+
+  <details>
+
+  <summary>Lighthouse - Contact Page - Mobile</summary>
+
+  ![Lighthouse - Contact Page - Mobile](static/images/readme-images/testing/lighthouse-contact-mobile.png)
 
   </details>
 
@@ -1063,6 +1137,17 @@ To make sure all interactions and forms / links work as intended, manual testing
 | &check; | Clicking a post image or 'Visit Post' loads post detail page |
 | &check; | Clicking pagination buttons loads next / previous page |
 | &check; | Clicking social media links in footer opens in new tab |
+
+| Status | About Page |
+|:------:| ---------- |
+| &check; | Clicking Send us an inquiry! loads contact page (signed in) |
+| &check; | Clicking Send us an inquiry! redirects to sign in page (signed out) |
+| &check; | After signin in, redirects back to contact page (signed in) |
+
+| Status | Contact Page |
+|:------:| ---------- |
+| &check; | Filling out form incorrectly gives error message (signed in) |
+| &check; | Filling out form correctly saves inquiry and redirects to home page (signed in) |
 
 | Status | Create Post Page |
 |:------:| ---------------- |
