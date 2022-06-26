@@ -80,7 +80,6 @@ class PostCreate(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
         except Exception:
             messages.warning(
                 self.request, 'Please choose a valid image format!')
-
             return redirect('create_post')
 
 
@@ -96,8 +95,13 @@ class PostUpdate(LoginRequiredMixin,
     success_url = '/post/{id}'
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+        try:
+            form.instance.author = self.request.user
+            return super().form_valid(form)
+        except Exception:
+            messages.warning(
+                self.request, 'Please choose a valid image format!')
+            return redirect('update_post', pk=form.instance.pk)
 
     def test_func(self):
         post = self.get_object()
