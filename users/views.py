@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.core.mail import send_mail
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.contrib.auth import login
@@ -63,9 +65,19 @@ class SendInquiry(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """Send inquiry view"""
     model = Inquiry
     fields = ['email', 'inquiry']
-    success_message = 'Your inquiry has been sent, thank you!'
+    success_message = 'Your inquiry has been sent and a \
+                       copy was sent to you. Thank you!'
     success_url = '/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        email_subject = 'New inquiry from: ' + form.cleaned_data.get('email')
+        email_user = self.request.user.username
+        email_inquiry = form.cleaned_data.get('inquiry')
+        email_message = f'{email_user} wrote: "{email_inquiry}"'
+        send_mail(
+            email_subject, email_message,
+            settings.EMAIL_HOST_USER,
+            [settings.DEFAULT_FROM_EMAIL, form.cleaned_data.get('email')]
+        )
         return super().form_valid(form)
