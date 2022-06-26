@@ -21,6 +21,8 @@ The following user stories were used in an agile approach when creating the appl
 
   - As a Site Admin I can manage the comments on the blog posts so that I can make sure no objectionable comments are present.
 
+  - As a Site Admin I can receive user inquiries on both the admin page and through email so that I can communicate with the site users.
+
 - #### User Registration
 
   - As a Site User I can register an account so that I can make posts and comments.
@@ -109,7 +111,7 @@ The database used for the application requires a Post, Comment and Inquiry model
 
   - ID and time of creation is given automatically.
 
-  - Users can choose an email adress and write an inquiry, while author is automatically set to the signed in users ID.
+  - Users can choose an email adress and write an inquiry, while user is automatically set to the signed in users ID.
 
 ### Wireframes
 
@@ -349,7 +351,7 @@ The following section will provide an overview of the features included in Tech 
 
   - If a user wishes to come in contact with the administraion of the site, they can send an inquiry from the contact page. 
 
-  - The form lets signed in users choose an email for a response, and write an inquiry ELABORATE!
+  - The form lets signed in users choose an email for a response, and write an inquiry. An e-mail will then be sent to the admin and the user will receive a copy on the specified e-mail.
 
   <details>
 
@@ -1143,9 +1145,10 @@ To make sure all interactions and forms / links work as intended, manual testing
 | &check; | After signin in, redirects back to contact page (signed in) |
 
 | Status | Contact Page |
-|:------:| ---------- |
+|:------:| ------------ |
 | &check; | Filling out form incorrectly gives error message (signed in) |
 | &check; | Filling out form correctly saves inquiry and redirects to home page (signed in) |
+| &check; | Filling out form correctly automatically sends an email to site admin & the user (signed in) |
 
 | Status | Create Post Page |
 |:------:| ---------------- |
@@ -1178,36 +1181,36 @@ To make sure all interactions and forms / links work as intended, manual testing
 | &check; | Clicking Keep the post takes user back to post detail page (signed in, author) |
 
 | Status | Sign In Page |
-|:------:| ---------------- |
+|:------:| ------------ |
 | &check; | Filling out form incorrectly gives error message |
 | &check; | Signin in with valid credentials authenticates user and loads home page |
 | &check; | Clicking Sign Up loads register page |
 
 | Status | Register Page |
-|:------:| ---------------- |
+|:------:| ------------- |
 | &check; | Filling out form incorrectly gives error message |
 | &check; | Registering with valid credentials authenticates user and loads home page |
 | &check; | Clicking Sign In loads sign in page |
 
 | Status | Profile Page |
-|:------:| ---------------- |
+|:------:| ------------ |
 | &check; | All fields are prepopulated with previous data (signed in) |
 | &check; | Filling out form incorrectly gives error message (signed in) |
 | &check; | Updating user info and clicking Update saves new data (signed in) |
 | &check; | Clicking Delete account loads confirm delete page (signed in) |
 
 | Status | Delete Account Page |
-|:------:| ---------------- |
+|:------:| ------------------- |
 | &check; | Clicking Delete button deletes the user completely and redirects to home (signed in) |
 | &check; | Clicking Keep my account takes user back to profile page (signed in) |
 
 | Status | Sign Out Page |
-|:------:| ---------------- |
+|:------:| ------------- |
 | &check; | Clicking Back to home page loads home page |
 | &check; | Clicking Sign In loads sign in page |
 
 | Status | Error Pages |
-|:------:| ---------------- |
+|:------:| ----------- |
 | &check; | Loads 404 page when a user gives an invalid url |
 | &check; | Loads 403 page when a user tries to access a restricted url |
 | &check; | Loads 500 page when an error occurs |
@@ -1222,6 +1225,10 @@ To make sure all interactions and forms / links work as intended, manual testing
     - Implemented as intended.
 
   - As a Site Admin I can manage the comments on the blog posts so that I can make sure no objectionable comments are present.
+
+    - Implemented as intended.
+
+  - As a Site Admin I can receive user inquiries on both the admin page and through email so that I can communicate with the site users.
 
     - Implemented as intended.
 
@@ -1322,7 +1329,26 @@ As a way of revealing the coverage of the tests, the coverage package was used t
 </details>
 
 ### Fixed Bugs
+
+- When implementing the authentication system, a security flaw was detected where signed in users could access other users profiles and edit / delete them.
+
+  - **Solution:** A mixin called 'UserPassesTestMixin' was added to the profile and DeleteUser views. A test_func could then check to make sure that the request was made by the signed in user. This was then kept in mind when developing the remaining features of the site.
+
+- If a user would upload an unsupported file format for their post image, an error would occur and crash the application.
+
+  - **Solution:** The PostCreate and PostUpdate view were modified with a try / except block to handle errors and show a message to the user to upload a valid image format.
+
+- A comment with only spaces would throw a server error code 500.
+
+  - **Solution:** A missed else statement in the 'if form.is_valid()' led to the error not being handled. After implementing the else statement a message will tell the user to not submit the form empty (spaces only).
+
+- After implementing case insensitive usernames to help with UX, users could update to or register with the same username but with different capitalization. For example if one user named 'john' and another named 'John' registered, then as one of them tried to sign in, the application would crash since the sign in method would return more than one user.
+
+  - **Solution:** By adding a method to the UserRegisterForm and UserUpdateForm to check if username existed in any casing the issue was solved. When a user tries to update to or register with an existing username but different capitalizaion a message will tell the user that it already exists.
+
 ### Known/Unfixed Bugs
+
+- As of writing this readme, no known bugs remain unfixed.
 
 ## Technologies Used
 ### Languages
