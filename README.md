@@ -1696,6 +1696,53 @@ The live link to this project can be found [here](https://tech-blog-pp4.herokuap
 
 ## Credits
 ### Code
+
+- [Stackoverflow](https://stackoverflow.com/) almost always have an answer to your questions. 
+
+  - [This](https://stackoverflow.com/questions/59176246/) post helped with how to render foreign key data from a model to an HTML template. 
+  
+  - When creating a DeleteView in Django, [this](https://stackoverflow.com/questions/24822509/) post helped with displaying a success message.
+
+  - Implementing case insensitive usernames was managed with the help of [this](https://stackoverflow.com/questions/70713647/) post.
+
+- Corey Schafer is a youtuber and a great developer that made a series on developing a Django project. [This playlist](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p) helped when implementing some features on this project.
+
+- [The Django documentation](https://docs.djangoproject.com/en/3.2/) was crucial to the development of this project, and a constant go-to for help with all code written.
+
+- [The Bootstrap documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/) was also a big help when creating the front end with the Bootstrap framework.
+
+- [Start Bootstrap](https://startbootstrap.com/) had some great front-end templates which was modified to fit the site.
+
+  - [Start Bootstrap Navbar](https://startbootstrap.com/snippets/navbar-logo)
+
+  - [Start Bootstrap Blog Feed](https://startbootstrap.com/snippets/portfolio-one-column)
+
+- [This youtube series](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM) was a great inspiration for how to write automated tests in Django.
+
+- [This article](https://simpleisbetterthancomplex.com/tutorial/2017/02/06/how-to-implement-case-insensitive-username.html) helped immensely when dealing with the bug of having duplicate usernames.
+
+- Code Institute Tutor Support helped with solving some issues, including how to properly set up an automated e-mail when a user contacts the site admin and how to properly handle if a user uploads an unsupported image format.
+
+- The Code Institute Django Blog walkthrough project had some great features that helped with the development of this project.
+
 ### Content
+
+- The font used in the site was imported from [Google Fonts](https://fonts.google.com/).
+
+- All text content was written by the developer.
+
+- Blog post images and content are written mostly by friends and family.
+
 ### Media
+
+- Icons used in the site were taken from [Font Awesome](https://fontawesome.com/).
+
+- The favicon was generated with [Favicon.io](https://favicon.io/).
+
+- All images used were provided by [Pexels](https://www.pexels.com/).
+
 ### Acknowledgements
+
+- My mentor Brian for some great feedback along the way, and some good ideas on how to make the project better.
+
+- Code Institutes Tutor Support, for always being helpful and professional.
