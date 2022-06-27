@@ -1407,138 +1407,292 @@ As a way of revealing the coverage of the tests, the coverage package was used t
 
 The site was deployed using Heroku. The steps for the deployment process are:
 
-1. ### Create a repository in GitHub and clone to a local machine
+### 1. Create a repository in GitHub and clone to a local machine
 
-   - If you are using the same template as for this project it can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template). Click 'Use this template' and create your own repository.
+  - If you are using the same template as for this project it can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template). Click 'Use this template' and create your own repository.
 
-   - If you wish to clone this project, clone it from [here](https://github.com/LucasBehrendt/tech-blog) and follow the instructions below.
+  - If you wish to clone this project, clone it from [here](https://github.com/LucasBehrendt/tech-blog) and follow the instructions below.
 
-   - Navigate to the main page of the repository you wish to clone.
+  - Navigate to the main page of the repository you wish to clone.
 
-   - Above the list of files, click the "code" button.
+  - Above the list of files, click the "code" button.
 
-   - To clone the repository using HTTPS, under "clone with HTTPS", copy the URL provided.
+  - To clone the repository using HTTPS, under "clone with HTTPS", copy the URL provided.
 
-   - Open Git Bash.
+  - Open Git Bash.
 
-   - Change the current working directory to the location where you want the cloned directory.
+  - Change the current working directory to the location where you want the cloned directory.
 
-   - Type `git clone`, and then paste the URL you copied earlier.
-       ```
-       $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-       ```
-   - Press Enter to create your local clone.
-       ```
-       $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-       > Cloning into `Clone-dir`...
-       > remote: Counting objects: 10, done.
-       > remote: Compressing objects: 100% (8/8), done.
-       > remove: Total 10 (delta 1), reused 10 (delta 1)
-       > Unpacking objects: 100% (10/10), done.
-       ```
-   - For a more detailed explanation, see this [walkthrough](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+  - Type `git clone`, and then paste the URL you copied earlier.
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+    ```
 
-2. ### Set up a virtual environment
+  - Press Enter to create your local clone.
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+    > Cloning into `Clone-dir`...
+    > remote: Counting objects: 10, done.
+    > remote: Compressing objects: 100% (8/8), done.
+    > remove: Total 10 (delta 1), reused 10 (delta 1)
+    > Unpacking objects: 100% (10/10), done.
+    ```
 
-   - Open the project in your local code editor.
+  - For a more detailed explanation, see this [walkthrough](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
-   - Install virtualenv:
-     ```
-     $ pip install virtualenv
-     ```
+### 2. Set up a virtual environment
 
-   - Create a virtual environment:
-     ```
-     $ virtualenv env_name
-     ```
+  - Open the project in your local code editor.
 
-   - Activate the virtual environment:
-     ```
-     $ source env_name/bin/activate
-     ```
+  - Install virtualenv:
+    ```
+    $ pip install virtualenv
+    ```
 
-3. ### Install packages and libraries
+  - Create a virtual environment:
+    ```
+    $ virtualenv env_name
+    ```
 
-   - If you are cloning this project you can easily install all packages/libraries required:
-     ```
-     $ pip install -r requirements.txt
-     ```
-   - Otherwise install the following packages/libraries:
-     ```
-     $ pip install django3.2
-     ```
-     ```
-     $ pip install gunicorn
-     ```
-     ```
-     $ pip install dj_database_url psycopg2
-     ```
-     ```
-     $ pip install dj3-cloudinary-storage
-     ```
-   - Create a requirements.txt file:
-     ```
-     $ pip freeze --local > requirements.txt
-     ```
+  - Activate the virtual environment:
+    ```
+    $ source env_name/bin/activate
+    ```
 
-4. ### Create Django project
+### 3. Install packages and libraries
 
-   - Create a new django project:
-     ```
-     $ django-admin startproject project_name .
-     ```
-   - Create an app within the project:
-     ```
-     $ python manage.py startapp app_name
-     ```
-   - Add the new app 'app_name' to the bottom of INSTALLED_APPS in your projects settings.py file.
+  - If you are cloning this project you can easily install all packages/libraries required:
+    ```
+    $ pip install -r requirements.txt
+    ```
+  - Otherwise install the following packages/libraries:
+    ```
+    $ pip install django3.2
+    ```
+    ```
+    $ pip install gunicorn
+    ```
+    ```
+    $ pip install dj_database_url psycopg2
+    ```
+    ```
+    $ pip install dj3-cloudinary-storage
+    ```
+  - Create a requirements.txt file:
+    ```
+    $ pip freeze --local > requirements.txt
+    ```
 
-   - Migrate changes:
-     ```
-     $ python manage.py migrate
-     ```
-   - Test that the project works on you localhost:
-     ```
-     $ python manage.py runserver
-     ```
+### 4. Create Django project
 
-5. ### Create an app on Heroku
+  - Create a new django project:
+    ```
+    $ django-admin startproject project_name .
+    ```
+  - Create an app within the project:
+    ```
+    $ python manage.py startapp app_name
+    ```
+  - Add the new app 'app_name' to the bottom of INSTALLED_APPS in your projects settings.py file.
 
-   - Sign in or create an account if you don't have one on [Heroku](https://www.heroku.com/)
+  - Migrate changes:
+    ```
+    $ python manage.py migrate
+    ```
+  - Test that the project works on you localhost:
+    ```
+    $ python manage.py runserver
+    ```
 
-   - On your dashboard, click the 'New' button in the to right corner and select 'Create new app'.
+### 5. Create an app on Heroku
 
-   - Name the project and set the region to the relevant one, then click the 'Create app' button.
+  - Sign in or create an account if you don't have one on [Heroku](https://www.heroku.com/)
 
-   - When the app has been created, go to the 'Resources' tab. Search for 'Heroku Postgres' and select 'Hobby Dev - Free' as plan, then click 'Submit Order Form'.
+  - On your dashboard, click the 'New' button in the to right corner and select 'Create new app'.
 
-6. ### Set up environment variables
+  - Name the project and set the region to the relevant one, then click the 'Create app' button.
 
-   - In your projects root directory, create a file called env.py and add it to your .gitignore file to keep it from being tracked by version control.
+  - When the app has been created, go to the 'Resources' tab. Search for 'Heroku Postgres' and select 'Hobby Dev - Free' as plan, then click 'Submit Order Form'.
 
-   - Under the settings tab on your heroku app, scroll down to 'Config Vars' and click on 'Reveal Config Vars'. Copy the 'DATABASE_URL' value.
+### 6. Set up environment variables
 
-   - In env.py, import os and set the following environment variables:
+  - In your projects root directory, create a file called env.py and add it to your .gitignore file to keep it from being tracked by version control.
 
-     `os.environ["DATABASE_URL"] = "Paste in Heroku DATABASE_URL value"`
+  - Under the settings tab on your heroku app, scroll down to 'Config Vars' and click on 'Reveal Config Vars'. Copy the 'DATABASE_URL' value.
 
-     `os.environ["SECRET_KEY"] = "Make up your own randomSecretKey"`
+  - In env.py, import os and set the following environment variables:
+    ```
+    os.environ["DATABASE_URL"] = "Paste in Heroku DATABASE_URL value"
+    ```
+    ```
+    os.environ["SECRET_KEY"] = "Make up your own randomSecretKey"
+    ```
 
-   - In your Heroku Config Vars, add the key SECRET_KEY with your randomSecretKey value.
+  - In your Heroku Config Vars, add the key SECRET_KEY with your randomSecretKey value.
 
-   - Sign in or create an account on [Cloudinary](https://cloudinary.com/) and copy your API variable. Set the environment variable in env.py:
+  - Sign in or create an account on [Cloudinary](https://cloudinary.com/) and copy your API variable. Set the environment variable in env.py:
+    ```
+    os.environ["CLOUDINARY_URL"] = "cloudinary://************************"
+    ```
 
-     `os.environ["CLOUDINARY_URL"] = "cloudinary://************************"`
+  - In your Heroku Config Vars, add the key CLOUDINARY_URL with your cloudinary api url value.
 
-   - In your Heroku Config Vars, add the key CLOUDINARY_URL with your cloudinary api url value.
+  - Set one more Heroku Config Var name DISABLE_COLLECTSTATIC with the value of 1. This is a temporary variable to be able to deploy to heroku without any static files.
 
-   - Set one more Heroku Config Var name DISABLE_COLLECTSTATIC with the value of 1. This is a temporary variable to be able to deploy to heroku without any static files.
+  - The last environment variable to set in env.py is to make sure DEBUG is set to True when running the server locally, but when deployed to Heroku it will be set to False:
+    ```
+    os.environ["DEVELOPMENT"] = "True" 
+    ``` 
+    - Make sure to NOT set this variable in you Heroku Config Vars!
+    
+### 7. Update settings.py File
 
-   - The last environment variable to set in env.py is to make sure DEBUG is set to True when running the server locally, but when deployed to Heroku it will be set to False:
+  - Near the top of the settings.py file, below `from pathlib import Path` add the following imports:
+    ```
+    import os
+    import dj_database_url
+    if os.path.isfile('env.py'):
+        import env
+    ```
 
-     `os.environ["DEVELOPMENT"] = "True"` - Make sure to NOT set this variable in you Heroku Config Vars!
+  - Create a 'development' variable and set it to:
+    ```
+    development = os.environ.get('DEVELOPMENT', False)
+    ```
 
-7. ### 
+  - Set DEBUG to the development variable so that, if running locally, the parsed value from your env.py file will set DEBUG to True. On Heroku, it will be set to False:
+    ```
+    DEBUG = development
+    ```
+
+  - Replace the default SECRET_KEY with the key you created in your env.py file:
+    ```
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    ```
+
+  - Add Cloudinary packages to INSTALLED_APPS above your apps name, in the following order (important):
+    ```
+    INSTALLED_APPS = [
+        ..., 
+        'cloudinary_storage',
+        'django.contrib.staticfiles',
+        'cloudinary',
+        'app_name',
+    ]
+    ```
+
+  - To use the Heroku PostGreSQL database, replace the default value of the DATABASES variable with:
+    ```
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+    ```
+
+  - Below the comments referencing static files, add the following snippet to use cloudinary for static files:
+    ```
+    # Static files (CSS, JavaScript, Images)
+    # https://docs.djangoproject.com/en/3.2/howto/static-files/
+    STATIC_URL = '/static/'
+    STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    MEDIA_URL = '/media/'
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    ```
+
+  - Below the imports at the top of the file, just under the BASE_DIR variable, add the following:
+    ```
+    TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+    ```
+
+  - To use this TEMPLATES_DIR setting, add it to the 'DIRS' key in the TEMPLATES dict:
+    ```
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [TEMPLATES_DIR],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
+        },
+    ]
+    ```
+
+  - Add both the Heroku host and your localhost to the ALLOWED_HOSTS list close to the top of the file:
+    ```
+    ALLOWED_HOSTS = ['project_name.herokuapp.com', 'localhost']
+    ```
+
+  - Create the following file and folders in the root directory of your project:
+
+    - 'media' (folder)
+    - 'static' (folder)
+    - 'templates' (folder)
+    - 'Procfile' (file)
+
+  - Within the Procfile, add the following line:
+    ```
+    web: gunicorn project_name.wsgi
+    ```
+
+  - Since the PostGreSQL database is now being used, migrate the changes again:
+    ```
+    $ python manage.py migrate
+    ```
+
+  - Make sure all files are saved, then commit and push to GitHub:
+    ```
+    $ git add .
+    ```
+    ```
+    $ git commit -m "Deployment commit"
+    ```
+    ```
+    $ git push
+    ```
+
+### 8. Deploy to Heroku
+
+  - Navigate to the Deploy tab on Heroku and under Deployment method, connect to your GitHub account.
+
+  - Directly below Deployment method there is a search bar to search for your repository. Connect the correct one to Heroku by clicking the Connect button.
+
+  - Scroll down to Manual deploy and click Deploy Branch, making sure that the main branch is selected.
+
+  - To enable automatic updates to the project, simply scroll up to Automatic deploys and click the Enable Automatic Deploys button.
+
+  - Your project is now hosted on Heroku.
+
+If you wish to deploy to Heroku using the CLI, follow these steps instead:
+
+  - Login to heroku by entering your credentials:
+    ```
+    $ heroku login -i
+    ```
+
+  - Find your app name from your account:
+    ```
+    $ heroku apps
+    ```
+
+  - Add Heroku remote:
+    ```
+    $ heroku git:remote -a app_name
+    ```
+
+  - Push to heroku
+    ```
+    $ git push heroku main
+    ```
+
+The live link to this project can be found [here](https://tech-blog-pp4.herokuapp.com/).
 
 ## Credits
 ### Code
