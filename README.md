@@ -70,7 +70,7 @@ The main objective of this project is to demonstrate a robust Full Stack applica
 ## User Experience (UX)
 ### User Stories
 
-The following user stories were used in an agile approach when creating the application, implemented in order of importance. 
+The user stories were implemented in an agile approach when creating the application, developed in order of importance. They were broken up into the following Epics to help with project management.
 
 - #### Site Admin
 
@@ -80,7 +80,7 @@ The following user stories were used in an agile approach when creating the appl
 
   - As a Site Admin I can receive user inquiries on both the admin page and through email so that I can communicate with the site users.
 
-- #### User Registration
+- #### User Registration / Authentication
 
   - As a Site User I can register an account so that I can make posts and comments.
 
@@ -102,6 +102,10 @@ The following user stories were used in an agile approach when creating the appl
 
   - As a Site User I can view a list of my own posts so that I can see my content and have easy access to it.
 
+  - As a Site User I can visit other members profile pages so that I can see their information and a list of their posts.
+
+  - As a Site User I can search among the posts so that I can find a certain post or posts about a certain topic.
+
 - #### User Interaction
 
   - As a Site User I can like / unlike a post so that I can interact with the content and show appreciation.
@@ -120,6 +124,8 @@ The following user stories were used in an agile approach when creating the appl
 
 The site is structured with simplicity and accessibility in mind, to help users intuitively navigate the site. The landing page gives the user relevant information about each post without cluttering the feed. A simple, fully responsive navigation helps keep the flow of the site balanced when navigating and interacting with the application. All pages are carefully structured to be consistent and pleasing to browse. All user interactions, such as registering an account or creating a post have logical responses and provide relevant feedback.
 
+When a user creates a new post or leave a comment, their content is instantly visible on the site for the best user experience when interacting with the application. Instead of users having to wait to get their posts or comments approved by the site admin, the content is managed manually by the site admin from the Django admin page. This leads to a more positive and instant user feedback and helps maintain the flow of content on the site.
+
 To help facilitate a logical flow of the application during the development process, a simple flowchart was created using [Lucidchart](https://www.lucidchart.com/pages/).
 
 <details>
@@ -132,7 +138,9 @@ To help facilitate a logical flow of the application during the development proc
 
 ### Data Model
 
-The database used for the application requires a Post, Comment and Inquiry model. The user authentication system is included in the Django framework and a User model was therefore already provided. To get an idea of the relationships and fields required in the models, an ERD (Entity Relationship Diagram) was created using [Lucidchart](https://www.lucidchart.com/pages/).
+The database used for the application requires a Post, Comment and Inquiry model. The user authentication system is included in the Django framework and a User model was therefore already provided.
+
+To get an idea of the relationships and fields required in the models, an ERD (Entity Relationship Diagram) was created using [Lucidchart](https://www.lucidchart.com/pages/).
 
 <details>
 
@@ -164,7 +172,7 @@ The database used for the application requires a Post, Comment and Inquiry model
 
   - The post field has a FK to the Post model, to make sure the comment is assigned to the correct blog post.
 
-- #### Inquiry Model
+- #### Inquiry Model UPDATE?
 
   - ID and time of creation is given automatically.
 
@@ -276,9 +284,21 @@ Delete post page<br>
 
 ## Agile Methodology
 
-To better plan and understand the development process, an agile approach was taken when implementing features. GitHub Projects provides a great way of keeping track of progress made and user stories to develop. By creating a project board on a basic kanban template, the development process can be overviewed and tackled in a proficient and time-effective way. Each user story was first created and added to the project board, then moved to In Progress as the feature was being developed, and finally to Done. With this approach it's easy to make sure the most important features gets implemented first.
+To better plan and understand the development process, an agile approach was taken when implementing features. GitHub Projects provides a great way of keeping track of progress made and user stories to develop. By creating a project board on a basic kanban template, the development process can be overviewed and tackled in a proficient and time-effective way. Each user story was first created, assigned to an Epic and added to the project board, then moved to In Progress as the feature was being developed, and finally to Done.
 
-This approach is especially powerful when working in teams, but still made the development process more enjoyable and easier to keep track of when developing alone.
+Labels were created and assigned to each user story to help keep track of the importance. 'Must have' labelled user stories have all been finished, 'Should have' labelled user stories were mostly finished, save for one. The 'Could Have' labelled user stories were not implemented due to time constrains, but this labelling system provides a valuable way of ensuring that the most important features gets implemented first.
+
+The distribution of user stories by label are:
+
+- Must have: 60% (12 of 20)
+
+- Should have: 25% (5 of 20)
+
+- Could have: 15% (3 of 20)
+
+When starting the development of each user story, the implementation was broken down into smaller steps that simplified how to tackle the process. For example, when developing the 'create posts' user story, steps like creating the view, rendering the form, handling user errors etc were a great way of managing the development process. This helped keep an organized and agile mindset on how to get the best result within a reasonable timeframe.
+
+This agile approach is especially powerful when working in teams, but still made the development process more enjoyable and easier to keep track of when developing alone.
 
 <details>
 
@@ -678,13 +698,15 @@ The following section will provide an overview of the features included in Tech 
 
 - Password reset through the registered e-mail, if the user forgets their password.
 
-- See a list of the users own post, to easier manage their own content.
+- See a list of the users own posts, to easier manage their own content.
 
 - A nicer format for writing the body of post entries, like a rich text editor.
 
 - Search function to find a certain post or posts about a certain topic.
 
 - Automatically resize images uploaded by users to improve site performance.
+
+- Visit other members profile pages and see a list of their posts.
 
 ## Testing
 ### Code Validation
@@ -1273,7 +1295,7 @@ To make sure all interactions and forms / links work as intended, manual testing
 | &check; | Loads 500 page when an error occurs |
 | &check; | Clicking Take me back to safety! loads home page |
 
-### User Story Implementation 
+### User Story Implementation UPDATE?
 
 - #### Site Admin
 
@@ -1361,9 +1383,17 @@ To make sure all interactions and forms / links work as intended, manual testing
 
     - Unfortunately not implemented due to time constraints. Planned to be implemented in the future.
 
+  - As a Site User I can visit other members profile pages so that I can see their information and a list of their posts.
+
+    - Unfortunately not implemented due to time constraints. Planned to be implemented in the future.
+
+  - As a Site User I can search among the posts so that I can find a certain post or posts about a certain topic.
+
+    - Unfortunately not implemented due to time constraints. Planned to be implemented in the future.
+
 ### Automated Testing
 
-Using Django TestCase extensive python testing was performed, which helped show the benefits of writing tests for code. For this project an MVP was prioritized, therefore the application was built before the tests were written. After getting acquainted with testing python code on this project, a test-driven development will be adopted for future projects.
+Using Django TestCase extensive python testing was performed, which helped show the benefits of writing tests for code. For this project a Minimum Viable Product was prioritized, therefore the application was built before the tests were written. After getting acquainted with testing python code on this project, a test-driven development will be adopted for future projects.
 
 46 tests were written to test as much of the code as possible. The result is presented below.
 
