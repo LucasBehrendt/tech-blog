@@ -48,13 +48,17 @@ class Profile(LoginRequiredMixin,
 
 class DeleteUser(LoginRequiredMixin,
                  UserPassesTestMixin,
-                 SuccessMessageMixin,
                  DeleteView):
     """User delete view"""
     model = User
     template_name = 'users/delete_user.html'
     success_message = 'Your profile has been deleted!'
     success_url = '/'
+
+    # Source: https://stackoverflow.com/questions/24822509/
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteUser, self).delete(request, *args, **kwargs)
 
     def test_func(self):
         user = self.get_object()
@@ -64,20 +68,21 @@ class DeleteUser(LoginRequiredMixin,
 class SendInquiry(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """Send inquiry view"""
     model = Inquiry
-    fields = ['email', 'inquiry']
+    fields = ['inquiry', ]
     success_message = 'Your inquiry has been sent and a \
                        copy was sent to you. Thank you!'
     success_url = '/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        email_subject = 'New inquiry from: ' + form.cleaned_data.get('email')
-        email_user = self.request.user.username
+        form.instance.email = self.request.user.email
+        email_username = self.request.user.username
+        email_subject = 'New inquiry from: ' + form.instance.email
         email_inquiry = form.cleaned_data.get('inquiry')
-        email_message = f'{email_user} wrote: "{email_inquiry}"'
+        email_message = f'{email_username} wrote:\n"{email_inquiry}"'
         send_mail(
             email_subject, email_message,
             settings.EMAIL_HOST_USER,
-            [settings.DEFAULT_FROM_EMAIL, form.cleaned_data.get('email')]
+            [settings.DEFAULT_FROM_EMAIL, form.instance.email]
         )
         return super().form_valid(form)
