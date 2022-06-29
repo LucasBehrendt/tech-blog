@@ -14,5 +14,5 @@ class PostAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     """Comment table on admin page"""
     list_filter = ('created_on',)
-    list_display = ('author', 'body', 'post', 'created_on')
-    search_fields = ('author__username', 'body')
+    list_display = ('author', 'post', 'created_on')
+    search_fields = ('author__username', 'body', 'post__title')
