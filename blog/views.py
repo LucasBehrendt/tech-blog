@@ -8,19 +8,26 @@ from .forms import CommentForm
 
 
 class About(generic.TemplateView):
-    """About page render view"""
+    """View for rendering about page"""
     template_name = 'blog/about.html'
 
 
 class PostList(generic.ListView):
-    """Main post feed view"""
+    """
+    Main post feed view, renders a list of all posts
+    on the home page and paginates after five posts.
+    """
     model = Post
     ordering = ['-created_on']
     paginate_by = 5
 
 
 class PostDetail(generic.DetailView):
-    """Main post detail view"""
+    """
+    Main post detail view, renders a specific post,
+    shows if the user has liked a post,
+    renders and handles the comment form.
+    """
     model = Post
     form_class = CommentForm
 
@@ -53,7 +60,10 @@ class PostDetail(generic.DetailView):
 
 
 class PostLike(generic.View):
-    """View for handling likes on post"""
+    """
+    View for handling likes on a post,
+    adds or removes a user from the likes column on the post.
+    """
     def post(self, request, pk):
         post = get_object_or_404(Post, pk=pk)
         user = self.request.user
@@ -67,7 +77,10 @@ class PostLike(generic.View):
 
 
 class PostCreate(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
-    """View for creating post"""
+    """
+    View for creating posts, renders the form and defines the fields.
+    Handles if a user uploads an invalid image format.
+    """
     model = Post
     fields = ['title', 'excerpt', 'content', 'image']
     success_message = 'Your post was submitted successfully!'
@@ -87,7 +100,11 @@ class PostUpdate(LoginRequiredMixin,
                  UserPassesTestMixin,
                  SuccessMessageMixin,
                  generic.UpdateView):
-    """View for updating post"""
+    """
+    View for updating posts, renders the form and defines the fields.
+    Handles if a user uploads an invalid image format.
+    Validates that the signed in user equals the request.user.
+    """
     model = Post
     fields = ['title', 'excerpt', 'content', 'image']
     template_name = 'blog/update_post.html'
@@ -111,7 +128,10 @@ class PostUpdate(LoginRequiredMixin,
 class PostDelete(LoginRequiredMixin,
                  UserPassesTestMixin,
                  generic.DeleteView):
-    """View for deleting post"""
+    """
+    View for deleting posts, validates that
+    the signed in user equals the request.user.
+    """
     model = Post
     success_message = 'Your post has been deleted!'
     success_url = '/'
@@ -128,7 +148,6 @@ class PostDelete(LoginRequiredMixin,
 
 class CommentDelete(LoginRequiredMixin, generic.View):
     """View for deleting comments"""
-
     def post(self, request, pk):
         comment = get_object_or_404(Comment, pk=pk)
         post = comment.post.id

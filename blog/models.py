@@ -5,7 +5,10 @@ from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
-    """Main post model"""
+    """
+    Main model for each post entry created by users,
+    with a counter for number of likes.
+    """
     title = models.CharField(max_length=150)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='post_author')
@@ -23,7 +26,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    """Main comment model"""
+    """Main model for each comment written on a specific post"""
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

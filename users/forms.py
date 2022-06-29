@@ -26,7 +26,7 @@ class UserRegisterForm(UserCreationForm):
 
 
 class UserUpdateForm(forms.ModelForm):
-    """Update form with additional email field for update page"""
+    """Update form with additional email field for profile page"""
     email = forms.EmailField()
 
     class Meta:

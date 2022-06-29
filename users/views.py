@@ -13,7 +13,10 @@ from .forms import UserRegisterForm, UserUpdateForm
 
 
 class Register(CreateView):
-    """Main view when registering new users"""
+    """
+    View for registering new users, renders and handles the form.
+    Signs the user in and redirects to home page.
+    """
     form_class = UserRegisterForm
     template_name = 'users/register.html'
     success_url = '/'
@@ -23,14 +26,17 @@ class Register(CreateView):
         username = form.cleaned_data.get('username')
         login(self.request, user)
         messages.success(self.request, f'Account created, \
-            you are now logged in as {username}!')
+            you are now signed in as {username}!')
         return HttpResponseRedirect(self.success_url)
 
 
 class Profile(LoginRequiredMixin,
               UserPassesTestMixin,
               UpdateView):
-    """Profile page view"""
+    """
+    View for updating user information, renders and handles the form.
+    Validates that the signed in user equals the request.user.
+    """
     model = User
     form_class = UserUpdateForm
     template_name = 'users/profile.html'
@@ -49,7 +55,10 @@ class Profile(LoginRequiredMixin,
 class DeleteUser(LoginRequiredMixin,
                  UserPassesTestMixin,
                  DeleteView):
-    """User delete view"""
+    """
+    View for deleting signed in users account.
+    Validates that the signed in user equals the request.user.
+    """
     model = User
     template_name = 'users/delete_user.html'
     success_message = 'Your profile has been deleted!'
@@ -66,7 +75,11 @@ class DeleteUser(LoginRequiredMixin,
 
 
 class SendInquiry(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    """Send inquiry view"""
+    """
+    View for sending inquiries, renders the form and defines
+    the fields. Sends an email with the inquiry to the site admin
+    and a copy to the registered email of the signed in user.
+    """
     model = Inquiry
     fields = ['inquiry', ]
     success_message = 'Your inquiry has been sent and a \

@@ -90,7 +90,7 @@ AUTHENTICATION_BACKENDS = ['users.backends.CaseInsensitiveModelBackend']
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# Local database used for unittesting
+# Local database used for unit testing, saved for development purposes
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',

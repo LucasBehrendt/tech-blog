@@ -4,7 +4,7 @@ from django.utils import timezone
 
 
 class Inquiry(models.Model):
-    """Main inquiry model"""
+    """Main model for each inquiry submitted by users"""
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     email = models.EmailField(blank=False, null=False)
     inquiry = models.TextField()
