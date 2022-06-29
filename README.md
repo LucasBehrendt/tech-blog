@@ -88,7 +88,7 @@ The user stories were implemented in an agile approach when creating the applica
 
   - As a Site User I can delete my profile so that there is no stored info on me.
 
-  - As a Site User I can reset my password using my registered e-mail so that I can gain access to my account if I forget my password.
+  - As a Site User I can reset my password using my registered email so that I can gain access to my account if I forget my password.
 
 - #### User Navigation
 
@@ -172,11 +172,11 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 
   - The post field has a FK to the Post model, to make sure the comment is assigned to the correct blog post.
 
-- #### Inquiry Model UPDATE?
+- #### Inquiry Model
 
   - ID and time of creation is given automatically.
 
-  - Users can choose an email adress and write an inquiry, while user is automatically set to the signed in users ID.
+  - Users can write an inquiry, while user and email are automatically set to the signed in users ID and registered email address.
 
 ### Wireframes
 
@@ -428,7 +428,7 @@ The following section will provide an overview of the features included in Tech 
 
   - If a user wishes to come in contact with the administraion of the site, they can send an inquiry from the contact page. 
 
-  - The form lets signed in users choose an email for a response, and write an inquiry. An e-mail will then be sent to the admin and the user will receive a copy on the specified e-mail.
+  - The form lets signed in users write an inquiry. An email will then be sent to the admin and the user will receive a copy on their registered email.
 
   <details>
 
@@ -696,7 +696,7 @@ The following section will provide an overview of the features included in Tech 
 
 ### Features Left to Implement
 
-- Password reset through the registered e-mail, if the user forgets their password.
+- Password reset through the registered email, if the user forgets their password.
 
 - See a list of the users own posts, to easier manage their own content.
 
@@ -1373,7 +1373,7 @@ To make sure all interactions and forms / links work as intended, manual testing
 
 - #### User Registration
 
-  - As a Site User I can reset my password using my registered e-mail so that I can gain access to my account if I forget my password.
+  - As a Site User I can reset my password using my registered email so that I can gain access to my account if I forget my password.
 
     - Unfortunately not implemented due to time constraints. After getting feedback on the site this is the most prioritized feature to implement when time permits.
 
@@ -1808,7 +1808,7 @@ The live link to this project can be found [here](https://tech-blog-pp4.herokuap
 
 - [This article](https://simpleisbetterthancomplex.com/tutorial/2017/02/06/how-to-implement-case-insensitive-username.html) helped immensely when dealing with the bug of having duplicate usernames.
 
-- Code Institute Tutor Support helped with solving some issues, including how to properly set up an automated e-mail when a user contacts the site admin and how to properly handle if a user uploads an unsupported image format.
+- Code Institute Tutor Support helped with solving some issues, including how to properly set up an automated email when a user contacts the site admin and how to properly handle if a user uploads an unsupported image format.
 
 - The Code Institute Django Blog walkthrough project had some great features that helped with the development of this project.
 

@@ -8,7 +8,12 @@
             {% csrf_token %}
             <fieldset>
                 <legend class="border-bottom mb-4">Send an inquiry</legend>
-                <p>If you wish to get in touch with us to either ask a question or contribute to the site, please fill in the form!</p>
+                <p>
+                    If you wish to get in touch with us to either ask a question or 
+                    contribute to the site, please submit your inquiry below. 
+                    An email will be sent to the site administration and you will 
+                    receive a copy on your registered email address!
+                </p>
                 {{ form|crispy }}
             </fieldset>
             <div>
