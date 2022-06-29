@@ -1295,79 +1295,143 @@ To make sure all interactions and forms / links work as intended, manual testing
 | &check; | Loads 500 page when an error occurs |
 | &check; | Clicking Take me back to safety! loads home page |
 
-### User Story Implementation UPDATE?
+### User Story Acceptance Criteria
 
 - #### Site Admin
 
   - As a Site Admin I can manage the post content on the blog so that I can make sure no objectionable posts are present.
 
-    - Implemented as intended.
+    - I have access to the admin page.
+
+    - I can create, update or delete any and all post entries.
+
+    - I can search and filter by different keywords / values. 
 
   - As a Site Admin I can manage the comments on the blog posts so that I can make sure no objectionable comments are present.
 
-    - Implemented as intended.
+    - I have access to the admin page.
+
+    - I can create, update or delete any and all comments.
+
+    - I can search and filter by different keywords / values.
 
   - As a Site Admin I can receive user inquiries on both the admin page and through email so that I can communicate with the site users.
 
-    - Implemented as intended.
+    - I will receive all inquiries posted by users to the admin page.
+
+    - I have a designated admin email set up.
+
+    - I will receive all inquiries posted by users to the admin email.
+
+    - I can answer users to their registered email address that I receive in the inquiry. 
 
 - #### User Registration
 
   - As a Site User I can register an account so that I can make posts and comments.
 
-    - Implemented as intended.
+    - I can sign up for an accont from the register page.
+
+    - I can create posts when I am signed in to my account.
+
+    - I can comment on all posts when I am signed in to my account.
 
   - As a Site User I can update my information so that I can personalize my profile.
 
-    - Implemented as intended. 
+    - I can access the profile page of my account when I am signed in.
+
+    - I can edit my username and / or email from the profile page. 
 
   - As a Site User I can delete my profile so that there is no stored info on me.
 
-    - Implemented as intended.
+    - I can access the profile page of my account when I am signed in.
+
+    - I can delete my account permanently from the profile page, after confirming my choice.
 
 - #### User Navigation
 
   - As a Site User I can view a paginated list of posts so that I can easily select a post to view.
 
-    - Implemented as intended.
+    - On the home page, I can clearly see posts with the newest entries first.
+
+    - I can understand what the posts contain and easily choose one that interests me.
+
+    - I can browse through pages of posts and find older entries.
 
   - As a Site User I can click on a post so that I can read the full text.
 
-    - Implemented as intended.
+    - When I click on a post, I am taken to that posts detail page.
+
+    - On this page, I can read all the content of the post.
 
   - As a Site User I can view how many likes a post have so that I can see which posts are popular.
 
-    - Implemented as intended.
+    - I can see the number of likes a post have one the home page.
+
+    - I can also see the number of likes on the detail page of a specific post.
 
   - As a Site User I can view comments on a post so that I can read what other users think.
 
-    - Implemented as intended.
+    - On the home page, I can see how many comments a post have, so I know if there are any.
+
+    - On the post detail page, I can read all comments, with the newest comment at the bottom.
 
 - #### User Interaction
 
   - As a Site User I can like / unlike a post so that I can interact with the content and show appreciation.
 
-    - Implemented as intended.
+    - I can click on the like button when visiting a posts detail page.
+
+    - I can immediately see the number of likes on the post go up by one from my click.
+
+    - I can click again on the same button to remove my like on the post.
 
   - As a Site User I can create posts so that I can provide content to the community.
 
-    - Implemented as intended.
+    - When I am signed in, I can click the create post button from the navbar which will take me to a form.
+
+    - I can fill in the form however I like and if I want, I can upload an image.
+
+    - When I submit my post, I am taken to the post detail page.
 
   - As a Site User I can edit or delete my own posts so that I can control my own content.
 
-    - Implemented as intended.
+    - When viewing my own posts, I can click an update button that takes me to a form.
+
+    - The form is prepopulated with the data of the post.
+
+    - I can change anything from here, including removing an uploaded image.
+
+    - When I submit my post, I am taken to the post detail page.
+
+    - If I don't want to update my post, I can click the go back button to not make any changes.
+
+    - When viewing my own posts, I can also click a delete button that takes me to a confirmation page.
+
+    - From here I can choose to delete the post or go back again.
 
   - As a Site User I can leave comments on a post so that I can join in the conversation.
 
-    - Implemented as intended.
+    - When I visit a post detail page, if I am signed in, I can write a comment.
+
+    - If I am not signed in, there are links to help me go to the sign in / register page.
+
+    - If I leave a comment, I can immediately see it at the bottom of the conversation.
 
   - As a Site User I can delete my own comments so that I can control my own content.
 
-    - Implemented as intended.
+    - When I leave a comment, there is a button I can click to delete my own comments.
+
+    - If I click the delete button, I need to confirm my deletion to keep me from accidentally deleting my comment.
 
   - As a Site User I can contact the administration of the blog so that I can ask questions or help with the blog.
 
-    - Implemented as intended.
+    - If I want to contact the site admin, I can find an inquiry form by clicking the button on the about page.
+
+    - If I am not signed in, I automatically go to sign in page, then back to the inquiry form.
+
+    - When I send an inquiry, I receive an email to confirm that it was sent to the administraion.
+
+All acceptance criterias for the implemented user stories have been fulfilled.
 
 #### User Stories Not Implemented
 
