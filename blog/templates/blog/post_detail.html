@@ -95,6 +95,7 @@
             </div>
             <hr>
             <div class="col-12 p-0">
+                <!-- Render Foreign Key source: https://stackoverflow.com/questions/59176246/ -->
                 {% if not post.comment_set.all %}
                 <p class="text-center mt-3">No comments here yet...</p>
                 {% else %}

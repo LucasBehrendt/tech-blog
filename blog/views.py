@@ -116,6 +116,7 @@ class PostDelete(LoginRequiredMixin,
     success_message = 'Your post has been deleted!'
     success_url = '/'
 
+    # Source: https://stackoverflow.com/questions/24822509/
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
         return super(PostDelete, self).delete(request, *args, **kwargs)
