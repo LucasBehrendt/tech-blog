@@ -41,6 +41,13 @@ class Profile(LoginRequiredMixin,
     form_class = UserUpdateForm
     template_name = 'users/profile.html'
 
+    def get_form_kwargs(self):
+        # get request.user in form to check for unchanged username
+        # source: https://stackoverflow.com/questions/1202839/
+        kwargs = super(Profile, self).get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+
     def form_valid(self, form):
         user = form.save()
         messages.success(self.request,
