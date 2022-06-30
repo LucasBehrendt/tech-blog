@@ -1,6 +1,6 @@
 # Tech Blog
 
-Tech Blog is an open community-driven site for everyone, whether you're a tech geek that can't get enough of the newest and hottest gadgets on the market, or just looking for some tips on your next purchase. By signin up, users can share their thoughts and interact with other members by commenting on and liking posts.
+Tech Blog is an open community-driven site for everyone, whether you're a tech geek that can't get enough of the newest and hottest gadgets on the market, or just looking for some tips on your next purchase. By signing up, users can share their thoughts and interact with other members by commenting on and liking posts.
 
 The main objective of this project is to demonstrate a robust Full Stack application with strong competency in both front-end and back-end development, using the Django framework.
 
@@ -126,7 +126,7 @@ The site is structured with simplicity and accessibility in mind, to help users 
 
 When a user creates a new post or leave a comment, their content is instantly visible on the site for the best user experience when interacting with the application. Instead of users having to wait to get their posts or comments approved by the site admin, the content is managed manually by the site admin from the Django admin page. This leads to a more positive and instant user feedback and helps maintain the flow of content on the site.
 
-To help facilitate a logical flow of the application during the development process, a simple flowchart was created using [Lucidchart](https://www.lucidchart.com/pages/).
+To help facilitate a logical flow of the application during the development process, a simple flowchart was created using [LucidChart](https://www.lucidchart.com/pages/).
 
 <details>
 
@@ -140,7 +140,7 @@ To help facilitate a logical flow of the application during the development proc
 
 The database used for the application requires a Post, Comment and Inquiry model. The user authentication system is included in the Django framework and a User model was therefore already provided.
 
-To get an idea of the relationships and fields required in the models, an ERD (Entity Relationship Diagram) was created using [Lucidchart](https://www.lucidchart.com/pages/).
+To get an idea of the relationships and fields required in the models, an ERD (Entity Relationship Diagram) was created using [LucidChart](https://www.lucidchart.com/pages/).
 
 <details>
 
@@ -162,7 +162,7 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 
   - Users can choose a title, excerpt, content and image, while author is automatically set to the signed in users ID.
 
-  - Likes will be 0 when created, and has a Many to Many relationship with the User model, meaning that many users can like the same post, and the same user can like many posts.
+  - Likes will be 0 when created and has a Many to Many relationship with the User model, meaning that many users can like the same post, and the same user can like many posts.
 
 - #### Comment Model
 
@@ -170,7 +170,7 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 
   - Users can choose a body, while author is automatically set to the signed in users ID.
 
-  - The post field has a FK to the Post model, to make sure the comment is assigned to the correct blog post.
+  - The post field has an FK to the Post model, to make sure the comment is assigned to the correct blog post.
 
 - #### Inquiry Model
 
@@ -269,8 +269,8 @@ Delete post page<br>
 ### Design
 - #### Colours
 
-  The colours used on the site are discreet and chosen to put emphasis on the content of blog posts, and not be distracting to the user. The background color is a near white Bootstrap colour (bg-light) that gives contrast to the content on the page, which is wrapped in card-like modules with a clear white background. 
-  The navigation bar at the top of the page has a gray Bootstrap colour (bg-secondary) that is also consistently used throughout the application on links and buttons.
+  The colours used on the site are discreet and chosen to put emphasis on the content of blog posts, and not be distracting to the user. The background colour is a near white Bootstrap colour (bg-light) that gives contrast to the content on the page, which is wrapped in card-like modules with a clear white background. 
+  The navigation bar at the top of the page has a grey Bootstrap colour (bg-secondary) that is also consistently used throughout the application on links and buttons.
 
   User interactions, such as posting and commenting, or registering and deleting an account all have relevant user feedback. The buttons are coloured in an appropriate way, such as delete buttons being red. Messages giving users feedback are also coloured appropriately to clarify user actions taken.
 
@@ -286,7 +286,7 @@ Delete post page<br>
 
 To better plan and understand the development process, an agile approach was taken when implementing features. GitHub Projects provides a great way of keeping track of progress made and user stories to develop. By creating a project board on a basic kanban template, the development process can be overviewed and tackled in a proficient and time-effective way. Each user story was first created, assigned to an Epic and added to the project board, then moved to In Progress as the feature was being developed, and finally to Done.
 
-Labels were created and assigned to each user story to help keep track of the importance. 'Must have' labelled user stories have all been finished, 'Should have' labelled user stories were mostly finished, save for one. The 'Could Have' labelled user stories were not implemented due to time constrains, but this labelling system provides a valuable way of ensuring that the most important features gets implemented first.
+Labels were created and assigned to each user story to help keep track of the importance. 'Must have' labelled user stories have all been finished, 'Should have' labelled user stories were mostly finished, save for one. The 'Could Have' labelled user stories were not implemented due to time constrains, but this labelling system provides a valuable way of ensuring that the most important features get implemented first.
 
 The distribution of user stories by label are:
 
@@ -318,7 +318,7 @@ The following section will provide an overview of the features included in Tech 
 
   - When a new user visits the site, the nav bar will hold an 'Account' option that, when clicked, shows two additional links to either sign in or register.
 
-  - A signed in user will see their username instead which, when clicked, shown links to either create a post, the users profile, or to sign out.
+  - A signed in user will see their username instead which, when clicked, shown links to either create a post, their profile, or to sign out.
 
   - When viewed on smaller devices, the navigation links will collapse into a so-called burger icon to help keep the nav bar clean.
 
@@ -360,7 +360,7 @@ The following section will provide an overview of the features included in Tech 
 
   - Each post entry is listed with newest at the top, with a pagination of five posts per page.
 
-  - Information about author, date posted and number of comments and likes is also visible from here.
+  - Information about author, date posted, and number of comments and likes is also visible from here.
 
   <details>
 
@@ -382,7 +382,7 @@ The following section will provide an overview of the features included in Tech 
 
   - The footer is a simple bar in clear white that breaks off from the near white background to create a subtle and pleasing element at the bottom of the page.
 
-  - To the left is a short copyright text, and on the right side users can find links to different social media plattforms. Since Tech Blog is for educational purposes the links directs the user to the homepage of each plattform respectively.
+  - To the left is a short copyright text, and on the right users can find links to different social media platforms. Since Tech Blog is for educational purposes, the links directs the user to the homepage of each platform respectively.
 
   <details>
 
@@ -426,7 +426,7 @@ The following section will provide an overview of the features included in Tech 
 
 - ### Contact Page
 
-  - If a user wishes to come in contact with the administraion of the site, they can send an inquiry from the contact page. 
+  - If a user wishes to get in touch with the administration of the site, they can send an inquiry from the contact page. 
 
   - The form lets signed in users write an inquiry. An email will then be sent to the admin and the user will receive a copy on their registered email.
 
@@ -450,11 +450,11 @@ The following section will provide an overview of the features included in Tech 
 
   - To be able to interact with the site and post content users must register for an account. This page simply lets users choose a username, email and password and saves it to the database.
 
-  - The built in authentication system in Django worked very well for this and if for instance a username is already in use, a message is shown to the user to inform of this.
+  - The built-in authentication system in Django worked very well for this and if for instance a username is already in use, a message is shown to the user to inform of this.
 
   - Case insensitive usernames was implemented to improve UX and not having to worry about duplicate usernames.
 
-  - If a user clicks on Register by misstake and already have an account, a link at the bottom takes the user to the sign in page instead.
+  - If a user clicks on Register by mistake and already have an account, a link at the bottom takes the user to the sign in page instead.
 
   <details>
 
@@ -494,7 +494,7 @@ The following section will provide an overview of the features included in Tech 
 
 - ### Profile Page
 
-  - The profile page is accessible for signed in users, and holds the users information with a form to update it if desirable.
+  - The profile page is accessible for signed in users and holds their information with a form to update it if desirable.
 
   - To prevent users updating their usernames to an already existing name, form handling was implemented similar to the register form.
 
@@ -552,7 +552,7 @@ The following section will provide an overview of the features included in Tech 
 
   - Users choose a title, excerpt, content and an image for their post, while ID, author and time of creation is given automatically.
 
-  - If the user don't upload an image for their post, a generic placeholder image is provided for them.
+  - If the user doesn't upload an image for their post, a generic placeholder image is provided for them.
 
   <details>
 
@@ -668,7 +668,7 @@ The following section will provide an overview of the features included in Tech 
 
 - ### Messages
 
-  - To keep users informed, simple message flashes will be displayed on various user interactions, such as creating a post, registering an account etc. These will only be visible a few seconds before dissapearing by themself, to not interfere with the UX.
+  - To keep users informed, simple message flashes will be displayed on various user interactions, such as creating a post, registering an account etc. These will only be visible a few seconds before disappearing by themself, to not interfere with the UX.
 
   <details>
 
@@ -696,7 +696,7 @@ The following section will provide an overview of the features included in Tech 
 
 ### Features Left to Implement
 
-- Password reset through the registered email, if the user forgets their password.
+- Password reset through the registered email if the user forgets their password.
 
 - See a list of the users own posts, to easier manage their own content.
 
@@ -1005,7 +1005,7 @@ To ensure all code for Tech Blog is correct, validation through various validato
 
 - The Lighthouse tool in Chrome DevTools was used to test the sites performance, accessibility, best practices and SEO. The website performed well in the tests, indicating a well-structured, highly accessible site.
 
-- A console error that seems to originate from some Bootstrap JavaScript code was caught by the Lighthouse tool. The error had to do with the alert function to display various messages to the user. Since the code was not written by the developer it could not be adressed. This had a slight impact on the "best practices" test but was not substantial enough to raise any real concern.
+- A console error that seems to originate from some Bootstrap JavaScript code was caught by the Lighthouse tool. The error had to do with the alert function to display various messages to the user. Since the code was not written by the developer it could not be addressed. This had a slight impact on the "best practices" test but was not substantial enough to raise any real concern.
 
   <details>
 
@@ -1221,7 +1221,7 @@ To make sure all interactions and forms / links work as intended, manual testing
 |:------:| ---------- |
 | &check; | Clicking Send us an inquiry! loads contact page (signed in) |
 | &check; | Clicking Send us an inquiry! redirects to sign in page (signed out) |
-| &check; | After signin in, redirects back to contact page (signed in) |
+| &check; | After signing in, redirects back to contact page (signed in) |
 
 | Status | Contact Page |
 |:------:| ------------ |
@@ -1262,7 +1262,7 @@ To make sure all interactions and forms / links work as intended, manual testing
 | Status | Sign In Page |
 |:------:| ------------ |
 | &check; | Filling out form incorrectly gives error message |
-| &check; | Signin in with valid credentials authenticates user and loads home page |
+| &check; | Signing in with valid credentials authenticates user and loads home page |
 | &check; | Clicking Sign Up loads register page |
 
 | Status | Register Page |
@@ -1329,7 +1329,7 @@ To make sure all interactions and forms / links work as intended, manual testing
 
   - As a Site User I can register an account so that I can make posts and comments.
 
-    - I can sign up for an accont from the register page.
+    - I can sign up for an account from the register page.
 
     - I can create posts when I am signed in to my account.
 
@@ -1371,7 +1371,7 @@ To make sure all interactions and forms / links work as intended, manual testing
 
   - As a Site User I can view comments on a post so that I can read what other users think.
 
-    - On the home page, I can see how many comments a post have, so I know if there are any.
+    - On the home page, I can see how many comments a post has, so I know if there are any.
 
     - On the post detail page, I can read all comments, with the newest comment at the bottom.
 
@@ -1429,9 +1429,9 @@ To make sure all interactions and forms / links work as intended, manual testing
 
     - If I am not signed in, I automatically go to sign in page, then back to the inquiry form.
 
-    - When I send an inquiry, I receive an email to confirm that it was sent to the administraion.
+    - When I send an inquiry, I receive an email to confirm that it was sent to the administration.
 
-All acceptance criterias for the implemented user stories have been fulfilled.
+All acceptance criteria for the implemented user stories have been fulfilled.
 
 #### User Stories Not Implemented
 
@@ -1439,7 +1439,7 @@ All acceptance criterias for the implemented user stories have been fulfilled.
 
   - As a Site User I can reset my password using my registered email so that I can gain access to my account if I forget my password.
 
-    - Unfortunately not implemented due to time constraints. After getting feedback on the site this is the most prioritized feature to implement when time permits.
+    - Unfortunately not implemented due to time constraints. After getting feedback on the site, this is the most prioritized feature to implement when time permits.
 
 - #### User Navigation
 
@@ -1463,7 +1463,7 @@ Using Django TestCase extensive python testing was performed, which helped show 
 
 <details>
 
-<summary>Unittest - Test Results</summary>
+<summary>Unit test - Test Results</summary>
 
 ![Unittest - Test Results](static/images/readme-images/testing/unittest.png)
 
@@ -1473,7 +1473,7 @@ As a way of revealing the coverage of the tests, the coverage package was used t
 
 <details>
 
-<summary>Unittest - Coverage Results</summary>
+<summary>Unit test - Coverage Results</summary>
 
 ![Unittest - Test Results](static/images/readme-images/testing/coverage-report.png)
 
@@ -1483,7 +1483,7 @@ As a way of revealing the coverage of the tests, the coverage package was used t
 
 - When implementing the authentication system, a security flaw was detected where signed in users could access other users profiles and edit / delete them.
 
-  - **Solution:** A mixin called 'UserPassesTestMixin' was added to the profile and DeleteUser views. A test_func could then check to make sure that the request was made by the signed in user. This was then kept in mind when developing the remaining features of the site.
+  - **Solution:** A mixin called 'UserPassesTestMixin' was added to the Profile and DeleteUser views. A test_func could then check to make sure that the request was made by the signed in user. This was then kept in mind when developing the remaining features of the site.
 
 - If a user would upload an unsupported file format for their post image, an error would occur and crash the application.
 
@@ -1491,11 +1491,11 @@ As a way of revealing the coverage of the tests, the coverage package was used t
 
 - A comment with only spaces would throw a server error code 500.
 
-  - **Solution:** A missed else statement in the 'if form.is_valid()' led to the error not being handled. After implementing the else statement a message will tell the user to not submit the form empty (spaces only).
+  - **Solution:** A missed else statement in the 'if form.is_valid()' led to the error not being handled. After implementing the else statement, a message will tell the user to not submit the form empty (spaces only).
 
-- After implementing case insensitive usernames to help with UX, users could update to or register with the same username but with different capitalization. For example if one user named 'john' and another named 'John' registered, then as one of them tried to sign in, the application would crash since the sign in method would return more than one user.
+- After implementing case insensitive usernames to help with UX, users could update to or register with the same username but with different capitalization. For example, if one user named 'john' and another named 'John' registered, then as one of them tried to sign in, the application would crash since the sign in method would return more than one user.
 
-  - **Solution:** By adding a method to the UserRegisterForm and UserUpdateForm to check if username existed in any casing the issue was solved. When a user tries to update to or register with an existing username but different capitalizaion a message will tell the user that it already exists.
+  - **Solution:** By adding a method to the UserRegisterForm and UserUpdateForm to check if username existed in any casing the issue was solved. When a user tries to update to or register with an existing username but different capitalization a message will tell the user that it already exists.
 
 ### Known/Unfixed Bugs
 
@@ -1532,7 +1532,7 @@ As a way of revealing the coverage of the tests, the coverage package was used t
 
 - [Font Awesome](https://fontawesome.com/) - The icons in the site were provided by Font Awesome.
 
-- [Git](https://git-scm.com/) - Git was used through the Gitpod terminal as version control to commit and push to GitHub.
+- [Git](https://git-scm.com/) - Git was used through the GitPod terminal as version control to commit and push to GitHub.
 
 - [GitHub](https://github.com/) - All code for the site is stored on GitHub after being pushed from Git.
 
@@ -1542,13 +1542,13 @@ As a way of revealing the coverage of the tests, the coverage package was used t
 
 - [JSHint](https://jshint.com/) - Validation of JavaScript code was done with JSHint.
 
-- [Lucidchart](https://www.lucidchart.com/pages/) - The flowchart & ERD created for the site was made with Lucidchart.
+- [LucidChart](https://www.lucidchart.com/pages/) - The flowchart & ERD created for the site was made with LucidChart.
 
 - [PEP8 Online Validator](http://pep8online.com/) - Validation of Python code was done with PEP8 Online.
 
 - [Pexels](https://www.pexels.com/) -  All images were provided by Pexels.
 
-- [PostGreSQL](https://www.postgresql.org/) - Used through Heroku as database for the application.
+- [PostgreSQL](https://www.postgresql.org/) - Used through Heroku as database for the application.
 
 - [Techsini](http://techsini.com/multi-mockup/index.php) - The responsive image at the top of the README came from Techsini.
 
@@ -1560,7 +1560,7 @@ The site was deployed using Heroku. The steps for the deployment process are:
 
 ### 1. Create a repository in GitHub and clone to a local machine
 
-  - If you are using the same template as for this project it can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template). Click 'Use this template' and create your own repository.
+  - If you are using the same template as for this project, it can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template). Click 'Use this template' and create your own repository.
 
   - If you wish to clone this project, clone it from [here](https://github.com/LucasBehrendt/tech-blog) and follow the instructions below.
 
@@ -1593,6 +1593,8 @@ The site was deployed using Heroku. The steps for the deployment process are:
 
 ### 2. Set up a virtual environment
 
+  - **NOTE:** If you are using a remote environment, such as GitPod, you can skip these steps and go to chapter 3.
+
   - Open the project in your local code editor.
 
   - Install virtualenv:
@@ -1612,7 +1614,7 @@ The site was deployed using Heroku. The steps for the deployment process are:
 
 ### 3. Install packages and libraries
 
-  - If you are cloning this project you can easily install all packages/libraries required:
+  - If you are cloning this project, you can easily install all packages/libraries required:
     ```
     $ pip install -r requirements.txt
     ```
@@ -1650,7 +1652,7 @@ The site was deployed using Heroku. The steps for the deployment process are:
     ```
     $ python manage.py migrate
     ```
-  - Test that the project works on you localhost:
+  - Test that the project works on your localhost:
     ```
     $ python manage.py runserver
     ```
@@ -1659,7 +1661,7 @@ The site was deployed using Heroku. The steps for the deployment process are:
 
   - Sign in or create an account if you don't have one on [Heroku](https://www.heroku.com/)
 
-  - On your dashboard, click the 'New' button in the to right corner and select 'Create new app'.
+  - On your dashboard, click the 'New' button in the top right corner and select 'Create new app'.
 
   - Name the project and set the region to the relevant one, then click the 'Create app' button.
 
@@ -1669,7 +1671,7 @@ The site was deployed using Heroku. The steps for the deployment process are:
 
   - In your projects root directory, create a file called env.py and add it to your .gitignore file to keep it from being tracked by version control.
 
-  - Under the settings tab on your heroku app, scroll down to 'Config Vars' and click on 'Reveal Config Vars'. Copy the 'DATABASE_URL' value.
+  - Under the settings tab on your Heroku app, scroll down to 'Config Vars' and click on 'Reveal Config Vars'. Copy the 'DATABASE_URL' value.
 
   - In env.py, import os and set the following environment variables:
     ```
@@ -1686,9 +1688,9 @@ The site was deployed using Heroku. The steps for the deployment process are:
     os.environ["CLOUDINARY_URL"] = "cloudinary://************************"
     ```
 
-  - In your Heroku Config Vars, add the key CLOUDINARY_URL with your cloudinary api url value.
+  - In your Heroku Config Vars, add the key CLOUDINARY_URL with your Cloudinary api url value.
 
-  - Set one more Heroku Config Var name DISABLE_COLLECTSTATIC with the value of 1. This is a temporary variable to be able to deploy to heroku without any static files.
+  - Set one more Heroku Config Var name DISABLE_COLLECTSTATIC with the value of 1. This is a temporary variable to be able to deploy to Heroku without any static files.
 
   - The last environment variable to set in env.py is to make sure DEBUG is set to True when running the server locally, but when deployed to Heroku it will be set to False:
     ```
@@ -1732,14 +1734,14 @@ The site was deployed using Heroku. The steps for the deployment process are:
     ]
     ```
 
-  - To use the Heroku PostGreSQL database, replace the default value of the DATABASES variable with:
+  - To use the Heroku PostgreSQL database, replace the default value of the DATABASES variable with:
     ```
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
     ```
 
-  - Below the comments referencing static files, add the following snippet to use cloudinary for static files:
+  - Below the comments referencing static files, add the following snippet to use Cloudinary for static files:
     ```
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -1793,7 +1795,7 @@ The site was deployed using Heroku. The steps for the deployment process are:
     web: gunicorn project_name.wsgi
     ```
 
-  - Since the PostGreSQL database is now being used, migrate the changes again:
+  - Since the PostgreSQL database is now being used, migrate the changes again:
     ```
     $ python manage.py migrate
     ```
@@ -1823,7 +1825,7 @@ The site was deployed using Heroku. The steps for the deployment process are:
 
 If you wish to deploy to Heroku using the CLI, follow these steps instead:
 
-  - Login to heroku by entering your credentials:
+  - Login to Heroku by entering your credentials:
     ```
     $ heroku login -i
     ```
@@ -1838,7 +1840,7 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
     $ heroku git:remote -a app_name
     ```
 
-  - Push to heroku
+  - Push to Heroku
     ```
     $ git push heroku main
     ```
@@ -1848,13 +1850,15 @@ The live link to this project can be found [here](https://tech-blog-pp4.herokuap
 ## Credits
 ### Code
 
-- [Stackoverflow](https://stackoverflow.com/) almost always have an answer to your questions. 
+- [Stack Overflow](https://stackoverflow.com/) almost always has an answer to your questions.
 
   - [This](https://stackoverflow.com/questions/59176246/) post helped with how to render foreign key data from a model to an HTML template. 
   
   - When creating a DeleteView in Django, [this](https://stackoverflow.com/questions/24822509/) post helped with displaying a success message.
 
   - Implementing case insensitive usernames was managed with the help of [this](https://stackoverflow.com/questions/70713647/) post.
+
+- [This video](https://www.youtube.com/watch?v=e_D_hoJ1kAc) helped with showing active template links in Django.
 
 - Corey Schafer is a youtuber and a great developer that made a series on developing a Django project. [This playlist](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p) helped when implementing some features on this project.
 
@@ -1868,7 +1872,7 @@ The live link to this project can be found [here](https://tech-blog-pp4.herokuap
 
   - [Start Bootstrap Blog Feed](https://startbootstrap.com/snippets/portfolio-one-column)
 
-- [This youtube series](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM) was a great inspiration for how to write automated tests in Django.
+- [This YouTube series](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM) was a great inspiration for how to write automated tests in Django.
 
 - [This article](https://simpleisbetterthancomplex.com/tutorial/2017/02/06/how-to-implement-case-insensitive-username.html) helped immensely when dealing with the bug of having duplicate usernames.
 
