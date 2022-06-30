@@ -106,7 +106,6 @@ class TestViews(TestCase):
         )
         url = reverse('inquiry')
         response = self.client.post(url, {
-            'email': 'test@email.com',
             'inquiry': 'testInquiry',
         })
 
@@ -114,5 +113,5 @@ class TestViews(TestCase):
 
         self.assertTrue(logged_in)
         self.assertEqual(len(inquiry), 1)
-        self.assertEqual(inquiry.first().email, 'test@email.com')
+        self.assertEqual(inquiry.first().email, 'test@test.com')
         self.assertEqual(response.status_code, 302)

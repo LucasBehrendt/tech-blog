@@ -29,16 +29,16 @@ class UserUpdateForm(forms.ModelForm):
     """Update form with additional email field for profile page"""
     email = forms.EmailField()
 
+    class Meta:
+        """Definition of fields used in form"""
+        model = User
+        fields = ['username', 'email']
+
     def __init__(self, *args, **kwargs):
         # get request.user in form to check for unchanged username
         # source: https://stackoverflow.com/questions/1202839/
         self.user = kwargs.pop('user', None)
         super(UserUpdateForm, self).__init__(*args, **kwargs)
-
-    class Meta:
-        """Definition of fields used in form"""
-        model = User
-        fields = ['username', 'email']
 
     def clean(self):
         # check if case insensitive username exists
