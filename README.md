@@ -1469,7 +1469,7 @@ Using Django TestCase extensive python testing was performed, which helped show 
 
 </details>
 
-As a way of revealing the coverage of the tests, the coverage package was used to measure a 97% coverage result.
+As a way of revealing the coverage of the tests, the coverage package was used to measure a 95% coverage result.
 
 <details>
 
@@ -1493,9 +1493,13 @@ As a way of revealing the coverage of the tests, the coverage package was used t
 
   - **Solution:** A missed else statement in the 'if form.is_valid()' led to the error not being handled. After implementing the else statement, a message will tell the user to not submit the form empty (spaces only).
 
-- After implementing case insensitive usernames to help with UX, users could update to or register with the same username but with different capitalization. For example, if one user named 'john' and another named 'John' registered, then as one of them tried to sign in, the application would crash since the sign in method would return more than one user.
+- After implementing case insensitive usernames to help with UX, users could update to or register with the same username but with different capitalization. For example, if one user named 'john' and another named 'John' registered, then as one of them tried to sign in, the application would crash since it would try to sign in more than one user.
 
   - **Solution:** By adding a method to the UserRegisterForm and UserUpdateForm to check if username existed in any casing the issue was solved. When a user tries to update to or register with an existing username but different capitalization a message will tell the user that it already exists.
+
+- When fixing the bug above, a new issue was found. When a user wanted to only update their email from the profile page, the application would still warn that the username already exists.
+
+  - **Solution:** By checking if the 'request.user.username' is equal to the form username, the issue was solved. Now, if the username has not been changed, it will be valid when handling the form.
 
 ### Known/Unfixed Bugs
 
@@ -1857,6 +1861,8 @@ The live link to this project can be found [here](https://tech-blog-pp4.herokuap
   - When creating a DeleteView in Django, [this](https://stackoverflow.com/questions/24822509/) post helped with displaying a success message.
 
   - Implementing case insensitive usernames was managed with the help of [this](https://stackoverflow.com/questions/70713647/) post.
+
+  - [This](https://stackoverflow.com/questions/1202839/) post showed how to pass request data to a form.
 
 - [This video](https://www.youtube.com/watch?v=e_D_hoJ1kAc) helped with showing active template links in Django.
 
