@@ -39,6 +39,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto">
+                        <!-- Active links source: https://www.youtube.com/watch?v=e_D_hoJ1kAc -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == home %} active {% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
@@ -90,7 +91,7 @@
         </div>
     </div>
 
-    <main class="bg-light">
+    <main>
         {% block content %}
         {% endblock content %}
     </main>
@@ -100,7 +101,7 @@
         <div class="container">
             <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
                 <div class="col-md-4 d-flex align-items-center">
-                    <span class="text-muted"> © <span id="copyright"></span> Tech Blog</span>
+                    <span class="text-muted">&copy; <span id="copyright"></span> Tech Blog</span>
                 </div>
                 <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
                     <li class="list-inline-item">

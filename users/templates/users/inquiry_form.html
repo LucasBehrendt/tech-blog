@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<!-- Inquiry form -->
+<!-- Inquiry page -->
 <div class="container my-5">
     <div class="px-md-5 px-3 py-3 m-md-5 border rounded bg-white">
         <form method="POST">
@@ -11,7 +11,7 @@
                 <p>
                     If you wish to get in touch with us to either ask a question or 
                     contribute to the site, please submit your inquiry below. 
-                    An email will be sent to the site administration and you will 
+                    An email will be sent to the site administration, and you will 
                     receive a copy on your registered email address!
                 </p>
                 {{ form|crispy }}
